@@ -17,6 +17,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -30,6 +31,7 @@ import android.widget.RemoteViews;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.activity.OnBackPressedCallback;
+import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -38,7 +40,7 @@ import androidx.core.app.NotificationManagerCompat;
 
 public class MainActivity extends AppCompatActivity {
     // 自定义广播Action，用来关闭程序
-    String ACTION_CLOSE_APP = "fun.readest.ACTION_CLOSE_APP";
+    public static final String ACTION_CLOSE_APP = "fun.readest.ACTION_CLOSE_APP";
     public static final String ACTION_REFRESH_WEB = "fun.readest.REFRESH_WEBVIEW";
     // 广播接收器，收到消息刷新webview
     private final BroadcastReceiver refreshReceiver = new BroadcastReceiver() {
@@ -62,7 +64,9 @@ public class MainActivity extends AppCompatActivity {
         public void onReceive(Context context, Intent intent) {
             if(ACTION_CLOSE_APP.equals(intent.getAction())){
                 // 关闭MainActivity
-                MainActivity.this.finish();
+                //MainActivity.this.finish();
+                Toast.makeText(context, "关闭 Readest", Toast.LENGTH_SHORT).show();
+                System.exit(0);
             }
         }
     };
@@ -79,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
     private String text = "加载资源中";
     private final Handler handler = new Handler(Looper.getMainLooper());
     @RequiresApi(api = Build.VERSION_CODES.TIRAMISU)
-    @SuppressLint("SetJavaScriptEnabled")
+    @SuppressLint({"SetJavaScriptEnabled", "UnspecifiedRegisterReceiverFlag"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -91,15 +95,19 @@ public class MainActivity extends AppCompatActivity {
                 | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
                 | View.SYSTEM_UI_FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
-        // 注册广播
-        IntentFilter filter = new IntentFilter(ACTION_REFRESH_WEB);
-        // 加上第三个参数 Context.RECEIVER_NOT_EXPORTED
-        registerReceiver(refreshReceiver, filter, Context.RECEIVER_NOT_EXPORTED);
 
-        // 注册广播
-        IntentFilter filter2 = new IntentFilter(ACTION_CLOSE_APP);
-        // 加上第三个参数 Context.RECEIVER_NOT_EXPORTED
-        registerReceiver(closeReceiver, filter2, Context.RECEIVER_NOT_EXPORTED);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE) { // API34 Android14
+            // 注册广播
+            registerReceiver(refreshReceiver, new IntentFilter(ACTION_REFRESH_WEB), Context.RECEIVER_NOT_EXPORTED);
+            registerReceiver(closeReceiver, new IntentFilter(ACTION_CLOSE_APP), Context.RECEIVER_NOT_EXPORTED);
+        } else {
+
+            registerReceiver(refreshReceiver, new IntentFilter(ACTION_REFRESH_WEB));
+            registerReceiver(closeReceiver, new IntentFilter(ACTION_CLOSE_APP));
+        }
+
+
+
 
 // 开启返回监听
         OnBackPressedCallback callback = new OnBackPressedCallback(true) {
@@ -267,6 +275,7 @@ public class MainActivity extends AppCompatActivity {
             if (grantResults.length >0 && grantResults[0]==PackageManager.PERMISSION_GRANTED){
                 // 用户同意通知权限，可以发通知
                 showNotification();
+
             }else{
                 // 用户拒绝通知权限，无法弹出通知
             }
@@ -289,13 +298,15 @@ public class MainActivity extends AppCompatActivity {
         RemoteViews remoteViewsBig = new RemoteViews(getPackageName(), R.layout.notification_layout);
 
         // 按钮点击事件：发送广播刷新WebView
-        Intent btnIntent = new Intent(ACTION_REFRESH_WEB);
-        PendingIntent btnPendingIntent = PendingIntent.getBroadcast(this, 200, btnIntent, PendingIntent.FLAG_IMMUTABLE);
+        Intent refreshIntent = new Intent(ACTION_REFRESH_WEB);
+        refreshIntent.setPackage(getPackageName()); // 新增
+        PendingIntent btnPendingIntent = PendingIntent.getBroadcast(this, 200, refreshIntent, PendingIntent.FLAG_IMMUTABLE);
         remoteViewsBig.setOnClickPendingIntent(R.id.refresh_button, btnPendingIntent);
         remoteViewsSmall.setOnClickPendingIntent(R.id.refresh_button, btnPendingIntent);
 
         // ========== 关闭按钮 代码 ==========
         Intent closeIntent = new Intent(ACTION_CLOSE_APP);
+        closeIntent.setPackage(getPackageName()); // 新增
         PendingIntent closePendingIntent = PendingIntent.getBroadcast(this, 201, closeIntent, PendingIntent.FLAG_IMMUTABLE);
         remoteViewsBig.setOnClickPendingIntent(R.id.close_button, closePendingIntent);
         remoteViewsSmall.setOnClickPendingIntent(R.id.close_button, closePendingIntent);
