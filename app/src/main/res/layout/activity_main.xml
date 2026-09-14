@@ -19,6 +19,12 @@
        android:text="Readest"
        android:visibility="visible"
        android:gravity="center"
+       android:clickable="false"
+       android:focusable="false"
+       android:focusableInTouchMode="false"
+       android:longClickable="false"
+       android:textIsSelectable="false"
+       android:background="@null"
        android:layout_width="match_parent"
        android:layout_height="match_parent"/>
 

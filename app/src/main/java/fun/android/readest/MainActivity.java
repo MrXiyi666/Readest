@@ -69,7 +69,6 @@ public class MainActivity extends AppCompatActivity {
                 // 关闭MainActivity
                 MainActivity.this.finish();
                 Toast.makeText(context, "关闭 Readest", Toast.LENGTH_SHORT).show();
-                //System.exit(0);
             }
         }
     };
@@ -90,7 +89,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // ====== 全屏代码 放在setContentView之前！======
+        // 开启
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         // 隐藏状态栏、导航栏
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         Window window = getWindow();
@@ -128,6 +128,7 @@ public class MainActivity extends AppCompatActivity {
 
         webView = findViewById(R.id.webview);
         view_loading = findViewById(R.id.view_loading);
+
         webView.setBackgroundColor(Color.BLACK);
 
         webView.setWebViewClient(new WebViewClient() {
@@ -244,7 +245,7 @@ public class MainActivity extends AppCompatActivity {
         webSettings.setSupportMultipleWindows(true);
 //允许 WebView 读取`content://`系统内容提供者（相册、媒体等）。
         webSettings.setAllowContentAccess(true);
-
+        webView.loadUrl("https://web.readest.com/");
 
         // 创建通知渠道（只需要创建一次）
         createNotificationChannel();
@@ -317,14 +318,25 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onPause() {
+        super.onPause();
+        // 页面切后台，就取消常亮
+        getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+        if (webView == null) return;
+        webView.onPause();
+    }
+
+    @Override
     protected void onResume() {
         super.onResume();
-
+        // 页面回到前台，开启常亮
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         if (webView == null) return;
 
         String urlNow = webView.getUrl();
         // 已经加载目标站点，直接return；null代表还没加载页面
         if (urlNow != null && urlNow.startsWith("https://web.readest.com/")) {
+            webView.onResume();
             return;
         }
         webView.loadUrl("https://web.readest.com/");
@@ -333,6 +345,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        // 退出程序，关闭常亮
+        getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         try {
             unregisterReceiver(refreshReceiver);
             unregisterReceiver(closeReceiver);
