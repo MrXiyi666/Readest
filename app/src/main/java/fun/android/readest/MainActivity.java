@@ -13,6 +13,7 @@ import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.net.http.SslError;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -21,8 +22,10 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.webkit.JsResult;
 import android.webkit.SslErrorHandler;
 import android.webkit.WebChromeClient;
+import android.webkit.WebResourceError;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -64,9 +67,9 @@ public class MainActivity extends AppCompatActivity {
         public void onReceive(Context context, Intent intent) {
             if(ACTION_CLOSE_APP.equals(intent.getAction())){
                 // 关闭MainActivity
-                //MainActivity.this.finish();
+                MainActivity.this.finish();
                 Toast.makeText(context, "关闭 Readest", Toast.LENGTH_SHORT).show();
-                System.exit(0);
+                //System.exit(0);
             }
         }
     };
@@ -95,6 +98,9 @@ public class MainActivity extends AppCompatActivity {
                 | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
                 | View.SYSTEM_UI_FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
+        // 卸载残留通知
+        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
+        notificationManager.cancel(NOTIFY_ID);
 
         //注册广播
         registerReceiver(refreshReceiver, new IntentFilter(ACTION_REFRESH_WEB), Context.RECEIVER_NOT_EXPORTED);
@@ -123,13 +129,13 @@ public class MainActivity extends AppCompatActivity {
         webView = findViewById(R.id.webview);
         view_loading = findViewById(R.id.view_loading);
         webView.setBackgroundColor(Color.BLACK);
-        // =========焦点设置========
-        webView.setFocusable(true);
-        webView.setFocusableInTouchMode(true);
-        webView.setEnabled(true);
-
 
         webView.setWebViewClient(new WebViewClient() {
+            // 调试临时放行SSL证书，上线务必删除！
+            @Override
+            public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error) {
+                handler.proceed();
+            }
             // 开始加载网页 → 显示加载文字
             @Override
             public void onPageStarted(WebView view, String url, Bitmap favicon) {
@@ -143,33 +149,18 @@ public class MainActivity extends AppCompatActivity {
                 view_loading.setText("加载完毕");
                 handler.postDelayed(() -> view_loading.setVisibility(View.GONE),1000);
                 view.requestFocus();
-                //网页加载完成获取焦点
-                view.evaluateJavascript("document.body.style.backgroundColor='#000000';document.body.style.color='#ffffff';",null);
             }
-            // 新版7.0+
+
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
-                view.loadUrl(request.getUrl().toString());
-                return true;
+                // false：交给当前webview自己加载，不跳转外部浏览器
+                return false;
             }
-
-            //低版本兼容
+            // 捕获加载错误，方便日志排查
             @Override
-            public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                view.loadUrl(url);
-                return true;
-            }
-
-            //捕获加载错误，Logcat可以看到错误信息
-            @Override
-            public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
-                super.onReceivedError(view, errorCode, description, failingUrl);
-            }
-
-            //SSL证书错误处理（测试用，上线不要直接proceed）
-            @Override
-            public void onReceivedSslError(WebView view, SslErrorHandler handler, android.net.http.SslError error) {
-                handler.proceed();
+            public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error) {
+                Log.e("WEB_ERR", "加载错误：" + error.getDescription());
+                super.onReceivedError(view, request, error);
             }
         });
 
@@ -192,10 +183,20 @@ public class MainActivity extends AppCompatActivity {
                 text = "加载资源中" + "\n" + newProgress + "%";
                 view_loading.setText(text);
             }
+            // JS弹窗不拦截，放行
+            @Override
+            public boolean onJsAlert(WebView view, String url, String message, JsResult result) {
+                result.confirm();
+                return true;
+            }
+            @Override
+            public boolean onJsConfirm(WebView view, String url, String message, JsResult result) {
+                result.confirm();
+                return true;
+            }
         });
 
         WebSettings webSettings = webView.getSettings();
-
         //自动获取焦点
         webSettings.setNeedInitialFocus(true);
 
@@ -243,10 +244,7 @@ public class MainActivity extends AppCompatActivity {
         webSettings.setSupportMultipleWindows(true);
 //允许 WebView 读取`content://`系统内容提供者（相册、媒体等）。
         webSettings.setAllowContentAccess(true);
-        //webView.loadUrl("https://ie.icoa.cn/");
-        webView.post(() -> {
-            webView.loadUrl("https://web.readest.com/");
-        });
+
 
         // 创建通知渠道（只需要创建一次）
         createNotificationChannel();
@@ -255,9 +253,10 @@ public class MainActivity extends AppCompatActivity {
                 Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(MainActivity.this,
                     new String[]{Manifest.permission.POST_NOTIFICATIONS}, 100);
-            return;
+        }else{
+            showNotification();
         }
-        showNotification();
+
     }
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
@@ -266,7 +265,6 @@ public class MainActivity extends AppCompatActivity {
             if (grantResults.length >0 && grantResults[0]==PackageManager.PERMISSION_GRANTED){
                 // 用户同意通知权限，可以发通知
                 showNotification();
-
             }else{
                 // 用户拒绝通知权限，无法弹出通知
             }
@@ -306,8 +304,8 @@ public class MainActivity extends AppCompatActivity {
                 .setSmallIcon(R.mipmap.ic_launcher)
                 .setStyle(new NotificationCompat.DecoratedCustomViewStyle()) //自定义布局必须加这个样式
                 .setCustomContentView(remoteViewsSmall)      //收起时布局
-                .setCustomBigContentView(remoteViewsBig)    //展开时布局（下拉默认显示这个）
-                .setOngoing(true);  // ✅ 常驻通知，禁止滑动删除
+                .setCustomBigContentView(remoteViewsBig);    //展开时布局（下拉默认显示这个）
+               // .setOngoing(true);  // ✅ 常驻通知，禁止滑动删除
 
         Notification notification = builder.build();
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
@@ -316,6 +314,12 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
         notificationManager.notify(NOTIFY_ID, notification);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        webView.loadUrl("https://web.readest.com/");
     }
 
     @Override
