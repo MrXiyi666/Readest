@@ -21,6 +21,8 @@ import android.os.Looper;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
+import android.view.WindowInsets;
+import android.view.WindowInsetsController;
 import android.view.WindowManager;
 import android.webkit.JsResult;
 import android.webkit.SslErrorHandler;
@@ -319,6 +321,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+
+        if (webView == null) return;
+
+        String urlNow = webView.getUrl();
+        // 已经加载目标站点，直接return；null代表还没加载页面
+        if (urlNow != null && urlNow.startsWith("https://web.readest.com/")) {
+            return;
+        }
         webView.loadUrl("https://web.readest.com/");
     }
 
