@@ -20,6 +20,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.webkit.JsResult;
@@ -30,6 +31,7 @@ import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.RelativeLayout;
 import android.widget.RemoteViews;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -52,8 +54,19 @@ public class MainActivity extends AppCompatActivity {
             if(ACTION_REFRESH_WEB.equals(intent.getAction())){
                 // 在主线程刷新webview
                 if(webView != null){
-                    webView.reload();
+                    // 1.停止正在加载的网页
+                    webView.stopLoading();
+                    // 2.立刻清空屏幕内容，变成空白
+                    webView.loadUrl("about:blank");
+                    // 3.清空缓存，false=内存缓存，true=磁盘+内存一起清
                     webView.clearCache(false);
+                    // 清空历史栈（可选）
+                    webView.clearHistory();
+                    // 延时重新加载你的目标网址（因为about:blank是异步渲染，不能立刻reload）
+                    webView.postDelayed(() -> {
+                        webView.loadUrl("https://web.readest.com/");
+                    },100);
+
                     Toast.makeText(context, "已刷新 WebView", Toast.LENGTH_SHORT).show();
                 }else{
                     Toast.makeText(context, "刷新 WebView 失败", Toast.LENGTH_SHORT).show();
@@ -67,8 +80,10 @@ public class MainActivity extends AppCompatActivity {
         public void onReceive(Context context, Intent intent) {
             if(ACTION_CLOSE_APP.equals(intent.getAction())){
                 // 关闭MainActivity
-                MainActivity.this.finish();
+                //MainActivity.this.finish();
                 Toast.makeText(context, "关闭 Readest", Toast.LENGTH_SHORT).show();
+                NotificationManagerCompat.from(context).cancel(NOTIFY_ID);
+                System.exit(0);
             }
         }
     };
@@ -83,7 +98,19 @@ public class MainActivity extends AppCompatActivity {
     private WebChromeClient.CustomViewCallback customViewCallback;
     private TextView view_loading;
     private String text = "加载资源中";
+    // 主线程Handler
     private final Handler handler = new Handler(Looper.getMainLooper());
+
+    // 延时任务Runnable
+    private final Runnable hideLoadingRunnable = new Runnable() {
+        @Override
+        public void run() {
+            view_loading.setVisibility(View.GONE);
+        }
+    };
+
+    private RelativeLayout mainLayout;
+
     @RequiresApi(api = Build.VERSION_CODES.TIRAMISU)
     @SuppressLint({"SetJavaScriptEnabled"})
     @Override
@@ -99,9 +126,7 @@ public class MainActivity extends AppCompatActivity {
                 | View.SYSTEM_UI_FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
         // 卸载残留通知
-        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
-        notificationManager.cancel(NOTIFY_ID);
-
+        NotificationManagerCompat.from(this).cancel(NOTIFY_ID);
         //注册广播
         registerReceiver(refreshReceiver, new IntentFilter(ACTION_REFRESH_WEB), Context.RECEIVER_NOT_EXPORTED);
         registerReceiver(closeReceiver, new IntentFilter(ACTION_CLOSE_APP), Context.RECEIVER_NOT_EXPORTED);
@@ -125,8 +150,10 @@ public class MainActivity extends AppCompatActivity {
             }
         };
         getOnBackPressedDispatcher().addCallback(this, callback);
+        mainLayout = findViewById(R.id.main);
+        // 1. 创建WebView
+        webView = new WebView(this);
 
-        webView = findViewById(R.id.webview);
         view_loading = findViewById(R.id.view_loading);
 
         webView.setBackgroundColor(Color.BLACK);
@@ -137,18 +164,9 @@ public class MainActivity extends AppCompatActivity {
             public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error) {
                 handler.proceed();
             }
-            // 开始加载网页 → 显示加载文字
-            @Override
-            public void onPageStarted(WebView view, String url, Bitmap favicon) {
-                super.onPageStarted(view, url, favicon);
-                handler.removeCallbacksAndMessages(null);
-                view_loading.setVisibility(View.VISIBLE);
-            }
             @Override
             public void onPageFinished(WebView view, String url) {
                 super.onPageFinished(view, url);
-                view_loading.setText("加载完毕");
-                handler.postDelayed(() -> view_loading.setVisibility(View.GONE),1000);
                 view.requestFocus();
             }
 
@@ -160,7 +178,7 @@ public class MainActivity extends AppCompatActivity {
             // 捕获加载错误，方便日志排查
             @Override
             public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error) {
-                Log.e("WEB_ERR", "加载错误：" + error.getDescription());
+                //Log.e("webview", "加载错误：" + error.getDescription());
                 super.onReceivedError(view, request, error);
             }
         });
@@ -180,9 +198,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onProgressChanged(WebView view, int newProgress) {
                 super.onProgressChanged(view, newProgress);
+                //Log.w("webview", "加载资源中" + newProgress + "%");
                 // newProgress 0~100
                 text = "加载资源中" + "\n" + newProgress + "%";
                 view_loading.setText(text);
+                handler.removeCallbacks(hideLoadingRunnable);
+                Log.w("webview", "加载资源中" + " " + newProgress + "%");
+                if(newProgress == 100){
+                    view_loading.setText("加载完毕");
+                    handler.postDelayed(hideLoadingRunnable, 500);
+                }else{
+                    view_loading.setVisibility(View.VISIBLE);
+                }
             }
             // JS弹窗不拦截，放行
             @Override
@@ -245,7 +272,6 @@ public class MainActivity extends AppCompatActivity {
         webSettings.setSupportMultipleWindows(true);
 //允许 WebView 读取`content://`系统内容提供者（相册、媒体等）。
         webSettings.setAllowContentAccess(true);
-        webView.loadUrl("https://web.readest.com/");
 
         // 创建通知渠道（只需要创建一次）
         createNotificationChannel();
@@ -258,6 +284,13 @@ public class MainActivity extends AppCompatActivity {
             showNotification();
         }
 
+        // ✅ 重点：addView第二个参数 index=0，插入到第0位置（最底层），在TextView下面
+        mainLayout.addView(webView, 0, new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+        webView.post(() -> {
+            webView.loadUrl("https://web.readest.com/");
+            //Log.w("webview", "初始化网址");
+            //Toast.makeText(MainActivity.this, "已刷新 WebView", Toast.LENGTH_SHORT).show();
+        });
     }
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
@@ -344,9 +377,12 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
-        super.onDestroy();
+
+        //Log.w("webview", "onDestroy");
         // 退出程序，关闭常亮
         getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+        // 移除通知：清除指定NOTIFY_ID的通知
+        NotificationManagerCompat.from(this).cancel(NOTIFY_ID);
         try {
             unregisterReceiver(refreshReceiver);
             unregisterReceiver(closeReceiver);
@@ -354,18 +390,21 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        // 释放WebView
         if (webView != null) {
+            webView.stopLoading();
             webView.clearCache(false);
-            webView.stopLoading();          // 停止加载网页
             webView.getSettings().setJavaScriptEnabled(false);
-            webView.removeAllViews();       // 移除webview子视图
-            webView.destroy();              // 销毁WebView内核
-        }
 
-        // 移除通知：清除指定NOTIFY_ID的通知
-        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
-        notificationManager.cancel(NOTIFY_ID);
+            // ✅ 动态创建WebView【必须】从父布局移除
+            ViewGroup parent = (ViewGroup) webView.getParent();
+            if (parent != null) {
+                parent.removeView(webView);
+            }
+            webView.destroy();
+            webView = null;
+        }
+        super.onDestroy();
+
     }
 
 
