@@ -5,6 +5,9 @@ import static fun.android.readest.App.funWebView;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
+import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 import androidx.core.app.NotificationManagerCompat;
 
@@ -15,11 +18,12 @@ public class FunBroadcast {
             if(App.ACTION_REFRESH_WEB.equals(intent.getAction())){
                 // 在主线程刷新webview
                 if(funWebView.webView != null){
-                    // 1.停止正在加载的网页
-                    funWebView.webView.stopLoading();
-                    // 3.清空缓存，false=内存缓存，true=磁盘+内存一起清
-                    funWebView.webView.clearCache(false);
-                    funWebView.webView.reload();
+                   //Log.w("webview", "ACTION_REFRESH_WEB");
+                    funWebView.onDestroy();
+                    funWebView = null;
+                    funWebView = new FunWebView();
+                    App.main.addView(App.funWebView.webView, 0, new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+
                     Toast.makeText(context, "已刷新 WebView", Toast.LENGTH_SHORT).show();
                 }else{
                     Toast.makeText(context, "刷新 WebView 失败", Toast.LENGTH_SHORT).show();

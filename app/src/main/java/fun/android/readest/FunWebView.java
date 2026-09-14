@@ -65,7 +65,7 @@ public class FunWebView {
             @Override
             public void onProgressChanged(WebView view, int newProgress) {
                 super.onProgressChanged(view, newProgress);
-                Log.w("webview", "加载资源中" + newProgress + "%");
+                //Log.w("webview", "加载资源中" + newProgress + "%");
                 if(App.textView == null){
                     return;
                 }
@@ -102,13 +102,12 @@ public class FunWebView {
 
             @Override
             public void onViewDetachedFromWindow(View v) {
+                //Log.w("webview", "onViewDetachedFromWindow");
                 //Log.w("webview", "webview Detached到窗口，释放资源");
                 webView.stopLoading();
-                webView.clearCache(false);
-                webView.getSettings().setJavaScriptEnabled(false);
+                webView.clearCache(true);
                 // 清空历史栈（可选）
                 webView.clearHistory();
-
                 webView.destroy();
                 webView = null;
             }
@@ -168,6 +167,7 @@ public class FunWebView {
     }
 
     public void onDestroy(){
+        //Log.w("webview", "onDestroy");
         if (webView != null) {
             ViewGroup parent = (ViewGroup) webView.getParent();
             if (parent != null) {
