@@ -56,17 +56,9 @@ public class MainActivity extends AppCompatActivity {
                 if(webView != null){
                     // 1.停止正在加载的网页
                     webView.stopLoading();
-                    // 2.立刻清空屏幕内容，变成空白
-                    webView.loadUrl("about:blank");
                     // 3.清空缓存，false=内存缓存，true=磁盘+内存一起清
                     webView.clearCache(false);
-                    // 清空历史栈（可选）
-                    webView.clearHistory();
-                    // 延时重新加载你的目标网址（因为about:blank是异步渲染，不能立刻reload）
-                    webView.postDelayed(() -> {
-                        webView.loadUrl("https://web.readest.com/");
-                    },100);
-
+                    webView.reload();
                     Toast.makeText(context, "已刷新 WebView", Toast.LENGTH_SHORT).show();
                 }else{
                     Toast.makeText(context, "刷新 WebView 失败", Toast.LENGTH_SHORT).show();
@@ -144,6 +136,8 @@ public class MainActivity extends AppCompatActivity {
                 if (webView != null && webView.canGoBack()) {
                     webView.goBack(); //网页回上一页
                 } else {
+                    assert webView != null;
+                    webView.clearHistory();
                     // 已经到首页，拦截，不退出App，这里可以加Toast
                     Toast.makeText(MainActivity.this, "已经是首页", Toast.LENGTH_SHORT).show();
                 }
@@ -205,7 +199,6 @@ public class MainActivity extends AppCompatActivity {
                 handler.removeCallbacks(hideLoadingRunnable);
                 Log.w("webview", "加载资源中" + " " + newProgress + "%");
                 if(newProgress == 100){
-                    view_loading.setText("加载完毕");
                     handler.postDelayed(hideLoadingRunnable, 500);
                 }else{
                     view_loading.setVisibility(View.VISIBLE);
@@ -394,7 +387,8 @@ public class MainActivity extends AppCompatActivity {
             webView.stopLoading();
             webView.clearCache(false);
             webView.getSettings().setJavaScriptEnabled(false);
-
+            // 清空历史栈（可选）
+            webView.clearHistory();
             // ✅ 动态创建WebView【必须】从父布局移除
             ViewGroup parent = (ViewGroup) webView.getParent();
             if (parent != null) {
