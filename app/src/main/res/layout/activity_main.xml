@@ -8,4 +8,15 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <TextView
+        android:padding="10dp"
+        android:id="@+id/textView"
+        android:textSize="20sp"
+        android:background="@drawable/btn_round"
+        android:textColor="?android:attr/textColorPrimary"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
 </RelativeLayout>

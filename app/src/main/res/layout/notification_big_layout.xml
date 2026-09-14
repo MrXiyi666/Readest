@@ -9,6 +9,10 @@
         android:layout_height="wrap_content">
         <!-- 刷新按钮 -->
         <Button
+            android:elevation="0dp"
+            android:translationZ="0dp"
+            android:stateListAnimator="@null"
+            android:textColor="?android:attr/textColorPrimary"
             android:id="@+id/refresh_button"
             android:layout_marginEnd="4dp"
             android:layout_width="wrap_content"
@@ -16,6 +20,10 @@
             android:background="@drawable/btn_round"
             android:text="刷新"/>
         <Button
+            android:elevation="0dp"
+            android:translationZ="0dp"
+            android:stateListAnimator="@null"
+            android:textColor="?android:attr/textColorPrimary"
             android:layout_marginStart="4dp"
             android:id="@+id/close_button"
             android:layout_width="wrap_content"
@@ -24,6 +32,7 @@
             android:text="关闭"/>
     </LinearLayout>
     <TextView
+        android:textColor="?android:attr/textColorPrimary"
         android:layout_marginTop="4dp"
         android:text="刷新当前网页 或者 关闭整个程序"
         android:gravity="start"
