@@ -21,8 +21,6 @@ import android.os.Looper;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
-import android.view.WindowInsets;
-import android.view.WindowInsetsController;
 import android.view.WindowManager;
 import android.webkit.JsResult;
 import android.webkit.SslErrorHandler;
