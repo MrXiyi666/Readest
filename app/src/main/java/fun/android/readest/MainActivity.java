@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
     private String text = "加载资源中";
     private final Handler handler = new Handler(Looper.getMainLooper());
     @RequiresApi(api = Build.VERSION_CODES.TIRAMISU)
-    @SuppressLint({"SetJavaScriptEnabled", "UnspecifiedRegisterReceiverFlag"})
+    @SuppressLint({"SetJavaScriptEnabled"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -96,20 +96,11 @@ public class MainActivity extends AppCompatActivity {
                 | View.SYSTEM_UI_FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE) { // API34 Android14
-            // 注册广播
-            registerReceiver(refreshReceiver, new IntentFilter(ACTION_REFRESH_WEB), Context.RECEIVER_NOT_EXPORTED);
-            registerReceiver(closeReceiver, new IntentFilter(ACTION_CLOSE_APP), Context.RECEIVER_NOT_EXPORTED);
-        } else {
+        //注册广播
+        registerReceiver(refreshReceiver, new IntentFilter(ACTION_REFRESH_WEB), Context.RECEIVER_NOT_EXPORTED);
+        registerReceiver(closeReceiver, new IntentFilter(ACTION_CLOSE_APP), Context.RECEIVER_NOT_EXPORTED);
 
-            registerReceiver(refreshReceiver, new IntentFilter(ACTION_REFRESH_WEB));
-            registerReceiver(closeReceiver, new IntentFilter(ACTION_CLOSE_APP));
-        }
-
-
-
-
-// 开启返回监听
+        // 开启返回监听
         OnBackPressedCallback callback = new OnBackPressedCallback(true) {
             @Override
             public void handleOnBackPressed() {
