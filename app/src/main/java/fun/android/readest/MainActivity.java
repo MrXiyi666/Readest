@@ -11,14 +11,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.net.http.SslError;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -33,7 +29,6 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.RelativeLayout;
 import android.widget.RemoteViews;
-import android.widget.TextView;
 import android.widget.Toast;
 import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
@@ -88,18 +83,6 @@ public class MainActivity extends AppCompatActivity {
     private WebView webView;
     private View customView;
     private WebChromeClient.CustomViewCallback customViewCallback;
-    private TextView view_loading;
-    private String text = "加载资源中";
-    // 主线程Handler
-    private final Handler handler = new Handler(Looper.getMainLooper());
-
-    // 延时任务Runnable
-    private final Runnable hideLoadingRunnable = new Runnable() {
-        @Override
-        public void run() {
-            view_loading.setVisibility(View.GONE);
-        }
-    };
 
     private RelativeLayout mainLayout;
 
@@ -147,9 +130,6 @@ public class MainActivity extends AppCompatActivity {
         mainLayout = findViewById(R.id.main);
         // 1. 创建WebView
         webView = new WebView(this);
-
-        view_loading = findViewById(R.id.view_loading);
-
         webView.setBackgroundColor(Color.BLACK);
 
         webView.setWebViewClient(new WebViewClient() {
@@ -194,15 +174,8 @@ public class MainActivity extends AppCompatActivity {
                 super.onProgressChanged(view, newProgress);
                 //Log.w("webview", "加载资源中" + newProgress + "%");
                 // newProgress 0~100
-                text = "加载资源中" + "\n" + newProgress + "%";
-                view_loading.setText(text);
-                handler.removeCallbacks(hideLoadingRunnable);
-                Log.w("webview", "加载资源中" + " " + newProgress + "%");
-                if(newProgress == 100){
-                    handler.postDelayed(hideLoadingRunnable, 500);
-                }else{
-                    view_loading.setVisibility(View.VISIBLE);
-                }
+                //Log.w("webview", "加载资源中" + " " + newProgress + "%");
+
             }
             // JS弹窗不拦截，放行
             @Override
@@ -284,6 +257,7 @@ public class MainActivity extends AppCompatActivity {
             //Log.w("webview", "初始化网址");
             //Toast.makeText(MainActivity.this, "已刷新 WebView", Toast.LENGTH_SHORT).show();
         });
+        //Log.w("webview", "onCreate");
     }
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
@@ -300,7 +274,7 @@ public class MainActivity extends AppCompatActivity {
 
     // 创建通知渠道 API26+ 必须
     private void createNotificationChannel() {
-        int importance = NotificationManager.IMPORTANCE_HIGH;
+        int importance = NotificationManager.IMPORTANCE_LOW;
         NotificationChannel channel = new NotificationChannel(CHANNEL_ID, "Menu", importance);
         NotificationManager notificationManager = getSystemService(NotificationManager.class);
         notificationManager.createNotificationChannel(channel);
@@ -308,11 +282,9 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void showNotification() {
-        // 【折叠状态布局】
-        RemoteViews remoteViewsSmall = new RemoteViews(getPackageName(), R.layout.notification_layout);
+        RemoteViews remoteViewsSmall = new RemoteViews(getPackageName(), R.layout.notification_big_layout);
         // 【展开状态布局】和上面用同一个布局，下拉后默认展开这个
-        RemoteViews remoteViewsBig = new RemoteViews(getPackageName(), R.layout.notification_layout);
-
+        RemoteViews remoteViewsBig = new RemoteViews(getPackageName(), R.layout.notification_big_layout);
         // 按钮点击事件：发送广播刷新WebView
         Intent refreshIntent = new Intent(ACTION_REFRESH_WEB);
         refreshIntent.setPackage(getPackageName()); // 新增
@@ -329,10 +301,9 @@ public class MainActivity extends AppCompatActivity {
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
                 .setSmallIcon(R.mipmap.ic_launcher)
-                .setStyle(new NotificationCompat.DecoratedCustomViewStyle()) //自定义布局必须加这个样式
-                .setCustomContentView(remoteViewsSmall)      //收起时布局
-                .setCustomBigContentView(remoteViewsBig);    //展开时布局（下拉默认显示这个）
-               // .setOngoing(true);  // ✅ 常驻通知，禁止滑动删除
+                .setCustomContentView(remoteViewsSmall)
+                .setCustomBigContentView(remoteViewsBig);
+
 
         Notification notification = builder.build();
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
@@ -346,6 +317,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
+        //Log.w("webview", "onPause");
         // 页面切后台，就取消常亮
         getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         if (webView == null) return;
@@ -355,6 +327,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) == PackageManager.PERMISSION_GRANTED) {
+            showNotification();
+        }
+        //Log.w("webview", "onResume");
         // 页面回到前台，开启常亮
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         if (webView == null) return;
@@ -363,9 +339,11 @@ public class MainActivity extends AppCompatActivity {
         // 已经加载目标站点，直接return；null代表还没加载页面
         if (urlNow != null && urlNow.startsWith("https://web.readest.com/")) {
             webView.onResume();
+            //Log.w("webview", "webview onResume");
             return;
         }
         webView.loadUrl("https://web.readest.com/");
+        //Log.w("webview", "webview");
     }
 
     @Override
