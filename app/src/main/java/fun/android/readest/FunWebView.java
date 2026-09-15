@@ -48,7 +48,7 @@ public class FunWebView {
             @Override
             public void onPageFinished(WebView view, String url) {
                 super.onPageFinished(view, url);
-                //view.requestFocus();
+                view.requestFocus();
 
             }
         });
@@ -62,6 +62,7 @@ public class FunWebView {
 
             @Override
             public void onHideCustomView() {
+                super.onHideCustomView();
                 customViewCallback.onCustomViewHidden();
                 customView = null;
             }
@@ -69,6 +70,7 @@ public class FunWebView {
             public void onProgressChanged(WebView view, int newProgress) {
                 super.onProgressChanged(view, newProgress);
                 //Log.w("webview", "加载资源中" + newProgress + "%");
+                view.requestFocus();
                 if(isinit){
                     return;
                 }
@@ -85,17 +87,6 @@ public class FunWebView {
                 }
                 App.textView.setVisibility(View.VISIBLE);
                 App.textView.setText("加载资源中" + newProgress + "%");
-            }
-            // JS弹窗不拦截，放行
-            @Override
-            public boolean onJsAlert(WebView view, String url, String message, JsResult result) {
-                result.confirm();
-                return true;
-            }
-            @Override
-            public boolean onJsConfirm(WebView view, String url, String message, JsResult result) {
-                result.confirm();
-                return true;
             }
         });
 
@@ -131,8 +122,8 @@ public class FunWebView {
 
 // 文件访问（访问在线网页，关闭危险file跨域）
         webSettings.setAllowFileAccess(true);
-        webSettings.setAllowFileAccessFromFileURLs(false);
-        webSettings.setAllowUniversalAccessFromFileURLs(false);
+        webSettings.setAllowFileAccessFromFileURLs(true);
+        webSettings.setAllowUniversalAccessFromFileURLs(true);
 
 //缓存
         webSettings.setCacheMode(WebSettings.LOAD_DEFAULT);
@@ -157,18 +148,16 @@ public class FunWebView {
 
 //视频自动播放
         webSettings.setMediaPlaybackRequiresUserGesture(false);
-
         webSettings.setDefaultTextEncodingName("utf-8");
 
 //混合内容
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            webSettings.setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
-        }
+        webSettings.setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
 
 //多窗口
         webSettings.setSupportMultipleWindows(true);
         webSettings.setAllowContentAccess(true);
-
+        // 开启硬件加速（Activity里也要打开硬件加速）
+        webSettings.setRenderPriority(WebSettings.RenderPriority.HIGH);
     }
 
     public void onDestroy(){

@@ -9,6 +9,10 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:clickable="false"
+        android:longClickable="false"
         android:visibility="gone"
         android:padding="10dp"
         android:id="@+id/textView"

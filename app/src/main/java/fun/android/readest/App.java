@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.IntentFilter;
 import android.util.Log;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -49,12 +50,9 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-
+        //WebView.setWebContentsDebuggingEnabled(true);
         // 卸载残留通知
-        NotificationManagerCompat.from(this).cancel(NOTIFY_ID);
-        //注册广播
-        registerReceiver(FunBroadcast.refreshReceiver, new IntentFilter(ACTION_REFRESH_WEB), Context.RECEIVER_NOT_EXPORTED);
-        registerReceiver(FunBroadcast.closeReceiver, new IntentFilter(ACTION_CLOSE_APP), Context.RECEIVER_NOT_EXPORTED);
+
     }
 
     public static void onDestroy(){

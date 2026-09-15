@@ -1,6 +1,8 @@
 package fun.android.readest;
 
 import android.Manifest;
+import android.content.Context;
+import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -11,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.core.app.NotificationManagerCompat;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,7 +32,10 @@ public class MainActivity extends AppCompatActivity {
                 | View.SYSTEM_UI_FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
         getOnBackPressedDispatcher().addCallback(this, App.callback);
-
+        NotificationManagerCompat.from(this).cancel(App.NOTIFY_ID);
+        //注册广播
+        registerReceiver(FunBroadcast.refreshReceiver, new IntentFilter(App.ACTION_REFRESH_WEB), Context.RECEIVER_NOT_EXPORTED);
+        registerReceiver(FunBroadcast.closeReceiver, new IntentFilter(App.ACTION_CLOSE_APP), Context.RECEIVER_NOT_EXPORTED);
         App.funWebView = new FunWebView();
 
         App.main = findViewById(R.id.main);
