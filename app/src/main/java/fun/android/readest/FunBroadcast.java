@@ -40,6 +40,8 @@ public class FunBroadcast {
                 //MainActivity.this.finish();
                 Toast.makeText(context, "关闭 Readest", Toast.LENGTH_SHORT).show();
                 NotificationManagerCompat.from(context).cancel(NOTIFY_ID);
+                funWebView.onDestroy();
+                funWebView = null;
                 System.exit(0);
             }
         }
