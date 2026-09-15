@@ -3,6 +3,8 @@ package fun.android.readest;
 import android.app.Application;
 import android.content.Context;
 import android.content.IntentFilter;
+import android.util.Log;
+import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -10,6 +12,7 @@ import androidx.activity.OnBackPressedCallback;
 import androidx.core.app.NotificationManagerCompat;
 
 public class App extends Application {
+    public static RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
     public static Context context;
     public static RelativeLayout main;
     public static TextView textView;
@@ -46,13 +49,26 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        context= this;
-        funWebView = new FunWebView();
 
         // 卸载残留通知
         NotificationManagerCompat.from(this).cancel(NOTIFY_ID);
         //注册广播
         registerReceiver(FunBroadcast.refreshReceiver, new IntentFilter(ACTION_REFRESH_WEB), Context.RECEIVER_NOT_EXPORTED);
         registerReceiver(FunBroadcast.closeReceiver, new IntentFilter(ACTION_CLOSE_APP), Context.RECEIVER_NOT_EXPORTED);
+    }
+
+    public static void onDestroy(){
+        Toast.makeText(context, "关闭 Readest", Toast.LENGTH_SHORT).show();
+        NotificationManagerCompat.from(context).cancel(App.NOTIFY_ID);
+        if(App.funWebView != null){
+            App.funWebView.onDestroy();
+            App.funWebView = null;
+        }
+        try {
+            context.unregisterReceiver(FunBroadcast.refreshReceiver);
+            context.unregisterReceiver(FunBroadcast.closeReceiver);
+        } catch (Exception e) {
+            Log.w("error", e);
+        }
     }
 }

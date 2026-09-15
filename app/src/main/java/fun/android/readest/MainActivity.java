@@ -4,17 +4,13 @@ import android.Manifest;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.RelativeLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
-import androidx.core.app.NotificationManagerCompat;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        App.context= this;
         // 开启
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         // 隐藏状态栏、导航栏
@@ -32,9 +29,17 @@ public class MainActivity extends AppCompatActivity {
                 | View.SYSTEM_UI_FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
         getOnBackPressedDispatcher().addCallback(this, App.callback);
+
+        App.funWebView = new FunWebView();
+
         App.main = findViewById(R.id.main);
         App.textView = findViewById(R.id.textView);
-        App.main.addView(App.funWebView.webView, 0, new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+        App.main.post(new Runnable() {
+            @Override
+            public void run() {
+                App.main.addView(App.funWebView.webView, 0, App.layoutParams);
+            }
+        });
 
 
         // 创建通知渠道（只需要创建一次）
@@ -75,7 +80,6 @@ public class MainActivity extends AppCompatActivity {
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) == PackageManager.PERMISSION_GRANTED) {
             FunNoti.showNotification();
         }
-        //Log.w("webview", "onResume");
         // 页面回到前台，开启常亮
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         if (App.funWebView.webView == null) return;
@@ -91,19 +95,8 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
-        // 退出程序，关闭常亮
-        getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-        // 移除通知：清除指定NOTIFY_ID的通知
-        NotificationManagerCompat.from(this).cancel(App.NOTIFY_ID);
-        try {
-            unregisterReceiver(FunBroadcast.refreshReceiver);
-            unregisterReceiver(FunBroadcast.closeReceiver);
-        } catch (Exception e) {
-            Log.w("error", e);
-        }
-        App.funWebView.onDestroy();
+        App.onDestroy();
         super.onDestroy();
-
     }
 
 

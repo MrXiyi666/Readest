@@ -9,11 +9,11 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:visibility="gone"
         android:padding="10dp"
         android:id="@+id/textView"
         android:textSize="20sp"
         android:background="@drawable/btn_round"
-        android:textColor="?android:attr/textColorPrimary"
         android:layout_alignParentBottom="true"
         android:layout_margin="50dp"
         android:layout_width="match_parent"

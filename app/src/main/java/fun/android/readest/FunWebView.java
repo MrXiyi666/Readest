@@ -5,7 +5,6 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.JsResult;
@@ -15,6 +14,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 public class FunWebView {
+    private boolean isinit = false;
     public WebView webView;
     public View customView;
     public WebChromeClient.CustomViewCallback customViewCallback;
@@ -26,6 +26,7 @@ public class FunWebView {
                 return;
             }
             App.textView.setVisibility(View.GONE);
+            isinit = true;
         }
     };;
     public FunWebView(){
@@ -37,7 +38,9 @@ public class FunWebView {
             @Override
             public void onPageStarted(WebView view, String url, Bitmap favicon) {
                 super.onPageStarted(view, url, favicon);
-                //Log.w("webview", "开始加载" + url);
+                if(isinit){
+                    return;
+                }
                 App.textView.setVisibility(View.VISIBLE);
                 App.textView.setText("开始加载" + url);
             }
@@ -66,6 +69,9 @@ public class FunWebView {
             public void onProgressChanged(WebView view, int newProgress) {
                 super.onProgressChanged(view, newProgress);
                 //Log.w("webview", "加载资源中" + newProgress + "%");
+                if(isinit){
+                    return;
+                }
                 if(App.textView == null){
                     return;
                 }
@@ -93,17 +99,16 @@ public class FunWebView {
             }
         });
 
-        webView.loadUrl("https://web.readest.com/");
+
         webView.addOnAttachStateChangeListener(new View.OnAttachStateChangeListener() {
             @Override
             public void onViewAttachedToWindow(View v) {
-
+                webView.loadUrl("https://web.readest.com/");
+                isinit = false;
             }
 
             @Override
             public void onViewDetachedFromWindow(View v) {
-                //Log.w("webview", "onViewDetachedFromWindow");
-                //Log.w("webview", "webview Detached到窗口，释放资源");
                 webView.stopLoading();
                 webView.clearCache(true);
                 // 清空历史栈（可选）
@@ -167,7 +172,6 @@ public class FunWebView {
     }
 
     public void onDestroy(){
-        //Log.w("webview", "onDestroy");
         if (webView != null) {
             ViewGroup parent = (ViewGroup) webView.getParent();
             if (parent != null) {
