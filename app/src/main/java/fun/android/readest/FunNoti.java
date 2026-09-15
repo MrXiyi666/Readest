@@ -22,7 +22,7 @@ public class FunNoti {
     }
 
     public static void showNotification() {
-        RemoteViews remoteViewsSmall = new RemoteViews(App.context.getPackageName(), R.layout.notification_big_layout);
+        RemoteViews remoteViewsSmall = new RemoteViews(App.context.getPackageName(), R.layout.notification_small_layout);
         // 【展开状态布局】和上面用同一个布局，下拉后默认展开这个
         RemoteViews remoteViewsBig = new RemoteViews(App.context.getPackageName(), R.layout.notification_big_layout);
         // 按钮点击事件：发送广播刷新WebView
@@ -40,7 +40,8 @@ public class FunNoti {
         remoteViewsSmall.setOnClickPendingIntent(R.id.close_button, closePendingIntent);
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(App.context, App.CHANNEL_ID)
-                .setSmallIcon(R.mipmap.ic_launcher)
+                .setSmallIcon(R.drawable.kong)
+                .setStyle(new NotificationCompat.DecoratedCustomViewStyle())
                 .setCustomContentView(remoteViewsSmall)
                 .setCustomBigContentView(remoteViewsBig);
 
