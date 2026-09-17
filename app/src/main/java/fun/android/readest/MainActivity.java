@@ -96,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
 
         String urlNow = App.funWebView.webView.getUrl();
         // 已经加载目标站点，直接return；null代表还没加载页面
+        //如果 urlNow 不为空，并且 urlNow 是以 `https://web.readest.com/` 开头的网址
         if (urlNow != null && urlNow.startsWith("https://web.readest.com/")) {
             App.funWebView.webView.onResume();
             return;
