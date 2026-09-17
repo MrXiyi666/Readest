@@ -3,8 +3,8 @@
 # min_api: 26
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.2"}
-# pg_map_id: 1d668535e113b1a6b703742bbd086c8eeffbbed0e646524e93636b63d9f4f233
-# pg_map_hash: SHA-256 1d668535e113b1a6b703742bbd086c8eeffbbed0e646524e93636b63d9f4f233
+# pg_map_id: bf5a741e635fdf31fba1dafa2297c80eef95f27d0b6ea4e52a0de3061fcdf758
+# pg_map_hash: SHA-256 bf5a741e635fdf31fba1dafa2297c80eef95f27d0b6ea4e52a0de3061fcdf758
 android.app.AppComponentFactory -> android.app.AppComponentFactory:
 # {"id":"com.android.tools.r8.synthesized"}
     void <clinit>() -> <clinit>
@@ -10221,17 +10221,17 @@ androidx.appcompat.view.menu.CascadingMenuPopup$2 -> y5:
       # {"id":"com.android.tools.r8.synthesized"}
     1:1:void onViewAttachedToWindow(android.view.View):123:123 -> a
     1:1:void androidx.appcompat.view.menu.StandardMenuPopup$2.onViewAttachedToWindow(android.view.View):83:83 -> b
-    7:18:void fun.android.readest.FunWebView$4.onViewAttachedToWindow(android.view.View):95:95 -> onViewAttachedToWindow
-    19:22:void fun.android.readest.FunWebView$4.onViewAttachedToWindow(android.view.View):96:96 -> onViewAttachedToWindow
+    7:18:void fun.android.readest.FunWebView$3.onViewAttachedToWindow(android.view.View):93:93 -> onViewAttachedToWindow
+    19:22:void fun.android.readest.FunWebView$3.onViewAttachedToWindow(android.view.View):94:94 -> onViewAttachedToWindow
     8:13:void androidx.appcompat.view.menu.StandardMenuPopup$2.onViewDetachedFromWindow(android.view.View):87:87 -> onViewDetachedFromWindow
     14:25:void androidx.appcompat.view.menu.StandardMenuPopup$2.onViewDetachedFromWindow(android.view.View):88:88 -> onViewDetachedFromWindow
     26:32:void androidx.appcompat.view.menu.StandardMenuPopup$2.onViewDetachedFromWindow(android.view.View):89:89 -> onViewDetachedFromWindow
     33:36:void androidx.appcompat.view.menu.StandardMenuPopup$2.onViewDetachedFromWindow(android.view.View):91:91 -> onViewDetachedFromWindow
-    37:43:void fun.android.readest.FunWebView$4.onViewDetachedFromWindow(android.view.View):101:101 -> onViewDetachedFromWindow
-    44:49:void fun.android.readest.FunWebView$4.onViewDetachedFromWindow(android.view.View):102:102 -> onViewDetachedFromWindow
-    50:54:void fun.android.readest.FunWebView$4.onViewDetachedFromWindow(android.view.View):104:104 -> onViewDetachedFromWindow
-    55:60:void fun.android.readest.FunWebView$4.onViewDetachedFromWindow(android.view.View):105:105 -> onViewDetachedFromWindow
-    61:63:void fun.android.readest.FunWebView$4.onViewDetachedFromWindow(android.view.View):106:106 -> onViewDetachedFromWindow
+    37:43:void fun.android.readest.FunWebView$3.onViewDetachedFromWindow(android.view.View):99:99 -> onViewDetachedFromWindow
+    44:49:void fun.android.readest.FunWebView$3.onViewDetachedFromWindow(android.view.View):100:100 -> onViewDetachedFromWindow
+    50:54:void fun.android.readest.FunWebView$3.onViewDetachedFromWindow(android.view.View):102:102 -> onViewDetachedFromWindow
+    55:60:void fun.android.readest.FunWebView$3.onViewDetachedFromWindow(android.view.View):103:103 -> onViewDetachedFromWindow
+    61:63:void fun.android.readest.FunWebView$3.onViewDetachedFromWindow(android.view.View):104:104 -> onViewDetachedFromWindow
     64:69:void onViewDetachedFromWindow(android.view.View):127:127 -> onViewDetachedFromWindow
     70:75:void onViewDetachedFromWindow(android.view.View):128:128 -> onViewDetachedFromWindow
     76:81:void onViewDetachedFromWindow(android.view.View):129:129 -> onViewDetachedFromWindow
@@ -23302,39 +23302,39 @@ androidx.appcompat.widget.Toolbar -> androidx.appcompat.widget.Toolbar:
     191:194:void <init>(android.content.Context,android.util.AttributeSet):262 -> <init>
     195:200:void <init>(android.content.Context,android.util.AttributeSet,int):308:308 -> <init>
     195:200:void <init>(android.content.Context,android.util.AttributeSet):262 -> <init>
-    201:205:int androidx.appcompat.widget.TintTypedArray.getDimensionPixelOffset(int,int):197:197 -> <init>
-    201:205:void <init>(android.content.Context,android.util.AttributeSet,int):311 -> <init>
-    201:205:void <init>(android.content.Context,android.util.AttributeSet):262 -> <init>
-    206:210:int androidx.appcompat.widget.TintTypedArray.getDimensionPixelOffset(int,int):197:197 -> <init>
-    206:210:void <init>(android.content.Context,android.util.AttributeSet,int):314 -> <init>
-    206:210:void <init>(android.content.Context,android.util.AttributeSet):262 -> <init>
-    211:216:int androidx.appcompat.widget.TintTypedArray.getDimensionPixelSize(int,int):201:201 -> <init>
-    211:216:void <init>(android.content.Context,android.util.AttributeSet,int):317 -> <init>
-    211:216:void <init>(android.content.Context,android.util.AttributeSet):262 -> <init>
-    217:220:int androidx.appcompat.widget.TintTypedArray.getDimensionPixelSize(int,int):201:201 -> <init>
-    217:220:void <init>(android.content.Context,android.util.AttributeSet,int):319 -> <init>
-    217:220:void <init>(android.content.Context,android.util.AttributeSet):262 -> <init>
-    221:223:void <init>(android.content.Context,android.util.AttributeSet,int):321:321 -> <init>
-    221:223:void <init>(android.content.Context,android.util.AttributeSet):262 -> <init>
-    224:225:void <init>(android.content.Context,android.util.AttributeSet,int):322:322 -> <init>
-    224:225:void <init>(android.content.Context,android.util.AttributeSet):262 -> <init>
-    226:229:void androidx.appcompat.widget.RtlSpacingHelper.setAbsolute(int,int):68:68 -> <init>
-    226:229:void <init>(android.content.Context,android.util.AttributeSet,int):322 -> <init>
+    201:204:int androidx.appcompat.widget.TintTypedArray.getDimensionPixelOffset(int,int):197:197 -> <init>
+    201:204:void <init>(android.content.Context,android.util.AttributeSet,int):311 -> <init>
+    201:204:void <init>(android.content.Context,android.util.AttributeSet):262 -> <init>
+    205:209:int androidx.appcompat.widget.TintTypedArray.getDimensionPixelOffset(int,int):197:197 -> <init>
+    205:209:void <init>(android.content.Context,android.util.AttributeSet,int):314 -> <init>
+    205:209:void <init>(android.content.Context,android.util.AttributeSet):262 -> <init>
+    210:215:int androidx.appcompat.widget.TintTypedArray.getDimensionPixelSize(int,int):201:201 -> <init>
+    210:215:void <init>(android.content.Context,android.util.AttributeSet,int):317 -> <init>
+    210:215:void <init>(android.content.Context,android.util.AttributeSet):262 -> <init>
+    216:219:int androidx.appcompat.widget.TintTypedArray.getDimensionPixelSize(int,int):201:201 -> <init>
+    216:219:void <init>(android.content.Context,android.util.AttributeSet,int):319 -> <init>
+    216:219:void <init>(android.content.Context,android.util.AttributeSet):262 -> <init>
+    220:222:void <init>(android.content.Context,android.util.AttributeSet,int):321:321 -> <init>
+    220:222:void <init>(android.content.Context,android.util.AttributeSet):262 -> <init>
+    223:224:void <init>(android.content.Context,android.util.AttributeSet,int):322:322 -> <init>
+    223:224:void <init>(android.content.Context,android.util.AttributeSet):262 -> <init>
+    225:228:void androidx.appcompat.widget.RtlSpacingHelper.setAbsolute(int,int):68:68 -> <init>
+    225:228:void <init>(android.content.Context,android.util.AttributeSet,int):322 -> <init>
       # {"id":"com.android.tools.r8.rewriteFrame","conditions":["throws(Ljava/lang/NullPointerException;)"],"actions":["removeInnerFrames(1)"]}
-    226:229:void <init>(android.content.Context,android.util.AttributeSet):262 -> <init>
-    230:235:void androidx.appcompat.widget.RtlSpacingHelper.setAbsolute(int,int):69:69 -> <init>
-    230:235:void <init>(android.content.Context,android.util.AttributeSet,int):322 -> <init>
-    230:235:void <init>(android.content.Context,android.util.AttributeSet):262 -> <init>
-    236:243:void androidx.appcompat.widget.RtlSpacingHelper.setAbsolute(int,int):70:70 -> <init>
-    236:243:void <init>(android.content.Context,android.util.AttributeSet,int):322 -> <init>
-    236:243:void <init>(android.content.Context,android.util.AttributeSet):262 -> <init>
-    244:248:void <init>(android.content.Context,android.util.AttributeSet,int):326:326 -> <init>
-    244:248:void <init>(android.content.Context,android.util.AttributeSet):262 -> <init>
-    249:252:int androidx.appcompat.widget.TintTypedArray.getDimensionPixelOffset(int,int):197:197 -> <init>
-    249:252:void <init>(android.content.Context,android.util.AttributeSet,int):329 -> <init>
-    249:252:void <init>(android.content.Context,android.util.AttributeSet):262 -> <init>
-    253:254:void <init>(android.content.Context,android.util.AttributeSet,int):329:329 -> <init>
-    253:254:void <init>(android.content.Context,android.util.AttributeSet):262 -> <init>
+    225:228:void <init>(android.content.Context,android.util.AttributeSet):262 -> <init>
+    229:234:void androidx.appcompat.widget.RtlSpacingHelper.setAbsolute(int,int):69:69 -> <init>
+    229:234:void <init>(android.content.Context,android.util.AttributeSet,int):322 -> <init>
+    229:234:void <init>(android.content.Context,android.util.AttributeSet):262 -> <init>
+    235:242:void androidx.appcompat.widget.RtlSpacingHelper.setAbsolute(int,int):70:70 -> <init>
+    235:242:void <init>(android.content.Context,android.util.AttributeSet,int):322 -> <init>
+    235:242:void <init>(android.content.Context,android.util.AttributeSet):262 -> <init>
+    243:247:void <init>(android.content.Context,android.util.AttributeSet,int):326:326 -> <init>
+    243:247:void <init>(android.content.Context,android.util.AttributeSet):262 -> <init>
+    248:251:int androidx.appcompat.widget.TintTypedArray.getDimensionPixelOffset(int,int):197:197 -> <init>
+    248:251:void <init>(android.content.Context,android.util.AttributeSet,int):329 -> <init>
+    248:251:void <init>(android.content.Context,android.util.AttributeSet):262 -> <init>
+    252:254:void <init>(android.content.Context,android.util.AttributeSet,int):329:329 -> <init>
+    252:254:void <init>(android.content.Context,android.util.AttributeSet):262 -> <init>
     255:258:int androidx.appcompat.widget.TintTypedArray.getDimensionPixelOffset(int,int):197:197 -> <init>
     255:258:void <init>(android.content.Context,android.util.AttributeSet,int):331 -> <init>
     255:258:void <init>(android.content.Context,android.util.AttributeSet):262 -> <init>
@@ -26155,168 +26155,175 @@ androidx.core.app.ActivityCompat$$ExternalSyntheticLambda0 -> a1:
     57:59:void androidx.lifecycle.ProcessLifecycleOwner.dispatchStopIfNeeded$lifecycle_process_release():136:136 -> run
     57:59:void androidx.lifecycle.ProcessLifecycleOwner.delayedPauseRunnable$lambda$0(androidx.lifecycle.ProcessLifecycleOwner):57 -> run
     57:59:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
-    60:62:void ActivityCompat$$ExternalSyntheticLambda0.run():0:0 -> run
-    63:67:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():350:350 -> run
-    63:67:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
-    68:71:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():351:351 -> run
-    68:71:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
-    72:77:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():352:352 -> run
-    72:77:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
-    78:78:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():354:354 -> run
-    78:78:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
-    79:82:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():356:356 -> run
-    79:82:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
-    83:86:int androidx.core.provider.FontsContractCompat$FontInfo.getResultCode():345:345 -> run
-    83:86:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():358 -> run
-      # {"id":"com.android.tools.r8.rewriteFrame","conditions":["throws(Ljava/lang/NullPointerException;)"],"actions":["removeInnerFrames(1)"]}
+    60:61:void ActivityCompat$$ExternalSyntheticLambda0.run():0:0 -> run
+    62:68:void fun.android.readest.FunWebView.lambda$new$0():22:22 -> run
+    62:68:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
+    69:71:void fun.android.readest.FunWebView.lambda$new$0():25:25 -> run
+    69:71:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
+    72:74:void fun.android.readest.FunWebView.lambda$new$0():26:26 -> run
+    72:74:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
+    75:77:void ActivityCompat$$ExternalSyntheticLambda0.run():0:0 -> run
+    78:82:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():350:350 -> run
+    78:82:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
+    83:86:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():351:351 -> run
     83:86:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
-    87:89:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():361:361 -> run
-    87:89:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
-    90:99:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():369:369 -> run
-    90:99:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
-    100:103:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():378:378 -> run
-    100:103:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
-    104:106:void androidx.core.os.TraceCompat.beginSection(java.lang.String):109:109 -> run
-    104:106:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():378 -> run
-    104:106:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
-    107:108:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():380:380 -> run
-    107:108:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
-    109:112:android.graphics.Typeface androidx.emoji2.text.FontRequestEmojiCompatConfig$FontProviderHelper.buildTypeface(android.content.Context,androidx.core.provider.FontsContractCompat$FontInfo):424:424 -> run
-    109:112:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():380 -> run
-    109:112:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
-    113:118:android.graphics.Typeface androidx.core.graphics.TypefaceCompat.createFromFontInfo(android.content.Context,android.os.CancellationSignal,androidx.core.provider.FontsContractCompat$FontInfo[],int):255:255 -> run
-    113:118:android.graphics.Typeface androidx.core.provider.FontsContractCompat.buildTypeface(android.content.Context,android.os.CancellationSignal,androidx.core.provider.FontsContractCompat$FontInfo[]):76 -> run
-    113:118:android.graphics.Typeface androidx.emoji2.text.FontRequestEmojiCompatConfig$FontProviderHelper.buildTypeface(android.content.Context,androidx.core.provider.FontsContractCompat$FontInfo):424 -> run
-    113:118:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():380 -> run
-    113:118:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
-    119:120:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():381:381 -> run
-    119:120:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
-    121:122:android.net.Uri androidx.core.provider.FontsContractCompat$FontInfo.getUri():315:315 -> run
-    121:122:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():382 -> run
-    121:122:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
-    123:130:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():381:381 -> run
-    123:130:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
-    131:132:androidx.emoji2.text.MetadataRepo androidx.emoji2.text.MetadataRepo.create(android.graphics.Typeface,java.nio.ByteBuffer):129:129 -> run
-    131:132:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():386 -> run
-    131:132:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
-    133:135:void androidx.core.os.TraceCompat.beginSection(java.lang.String):109:109 -> run
-    133:135:androidx.emoji2.text.MetadataRepo androidx.emoji2.text.MetadataRepo.create(android.graphics.Typeface,java.nio.ByteBuffer):129 -> run
-    133:135:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():386 -> run
-    133:135:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
-    136:144:androidx.emoji2.text.MetadataRepo androidx.emoji2.text.MetadataRepo.create(android.graphics.Typeface,java.nio.ByteBuffer):130:130 -> run
-    136:144:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():386 -> run
-    136:144:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
-    145:147:void androidx.core.os.TraceCompat.endSection():122:122 -> run
-    145:147:androidx.emoji2.text.MetadataRepo androidx.emoji2.text.MetadataRepo.create(android.graphics.Typeface,java.nio.ByteBuffer):132 -> run
-    145:147:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():386 -> run
-    145:147:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
-    148:150:void androidx.core.os.TraceCompat.endSection():122:122 -> run
-    148:150:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():388 -> run
+    87:92:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():352:352 -> run
+    87:92:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
+    93:93:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():354:354 -> run
+    93:93:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
+    94:97:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():356:356 -> run
+    94:97:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
+    98:101:int androidx.core.provider.FontsContractCompat$FontInfo.getResultCode():345:345 -> run
+    98:101:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():358 -> run
+      # {"id":"com.android.tools.r8.rewriteFrame","conditions":["throws(Ljava/lang/NullPointerException;)"],"actions":["removeInnerFrames(1)"]}
+    98:101:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
+    102:104:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():361:361 -> run
+    102:104:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
+    105:114:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():369:369 -> run
+    105:114:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
+    115:118:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():378:378 -> run
+    115:118:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
+    119:121:void androidx.core.os.TraceCompat.beginSection(java.lang.String):109:109 -> run
+    119:121:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():378 -> run
+    119:121:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
+    122:123:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():380:380 -> run
+    122:123:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
+    124:127:android.graphics.Typeface androidx.emoji2.text.FontRequestEmojiCompatConfig$FontProviderHelper.buildTypeface(android.content.Context,androidx.core.provider.FontsContractCompat$FontInfo):424:424 -> run
+    124:127:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():380 -> run
+    124:127:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
+    128:133:android.graphics.Typeface androidx.core.graphics.TypefaceCompat.createFromFontInfo(android.content.Context,android.os.CancellationSignal,androidx.core.provider.FontsContractCompat$FontInfo[],int):255:255 -> run
+    128:133:android.graphics.Typeface androidx.core.provider.FontsContractCompat.buildTypeface(android.content.Context,android.os.CancellationSignal,androidx.core.provider.FontsContractCompat$FontInfo[]):76 -> run
+    128:133:android.graphics.Typeface androidx.emoji2.text.FontRequestEmojiCompatConfig$FontProviderHelper.buildTypeface(android.content.Context,androidx.core.provider.FontsContractCompat$FontInfo):424 -> run
+    128:133:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():380 -> run
+    128:133:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
+    134:135:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():381:381 -> run
+    134:135:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
+    136:137:android.net.Uri androidx.core.provider.FontsContractCompat$FontInfo.getUri():315:315 -> run
+    136:137:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():382 -> run
+    136:137:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
+    138:145:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():381:381 -> run
+    138:145:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
+    146:147:androidx.emoji2.text.MetadataRepo androidx.emoji2.text.MetadataRepo.create(android.graphics.Typeface,java.nio.ByteBuffer):129:129 -> run
+    146:147:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():386 -> run
+    146:147:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
+    148:150:void androidx.core.os.TraceCompat.beginSection(java.lang.String):109:109 -> run
+    148:150:androidx.emoji2.text.MetadataRepo androidx.emoji2.text.MetadataRepo.create(android.graphics.Typeface,java.nio.ByteBuffer):129 -> run
+    148:150:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():386 -> run
     148:150:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
-    151:153:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():390:390 -> run
-    151:153:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
-    154:157:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():391:391 -> run
-    154:157:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
-    158:163:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():392:392 -> run
-    158:163:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
-    164:165:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():394:395 -> run
-    164:165:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
-    166:168:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():395:395 -> run
+    151:159:androidx.emoji2.text.MetadataRepo androidx.emoji2.text.MetadataRepo.create(android.graphics.Typeface,java.nio.ByteBuffer):130:130 -> run
+    151:159:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():386 -> run
+    151:159:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
+    160:162:void androidx.core.os.TraceCompat.endSection():122:122 -> run
+    160:162:androidx.emoji2.text.MetadataRepo androidx.emoji2.text.MetadataRepo.create(android.graphics.Typeface,java.nio.ByteBuffer):132 -> run
+    160:162:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():386 -> run
+    160:162:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
+    163:165:void androidx.core.os.TraceCompat.endSection():122:122 -> run
+    163:165:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():388 -> run
+    163:165:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
+    166:168:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():390:390 -> run
     166:168:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
-    169:171:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():394:394 -> run
-    169:171:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
-    172:173:androidx.emoji2.text.MetadataRepo androidx.emoji2.text.MetadataRepo.create(android.graphics.Typeface,java.nio.ByteBuffer):132:132 -> run
-    172:173:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():386 -> run
-    172:173:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
-    174:176:void androidx.core.os.TraceCompat.endSection():122:122 -> run
-    174:176:androidx.emoji2.text.MetadataRepo androidx.emoji2.text.MetadataRepo.create(android.graphics.Typeface,java.nio.ByteBuffer):132 -> run
-    174:176:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():386 -> run
-    174:176:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
-    177:177:androidx.emoji2.text.MetadataRepo androidx.emoji2.text.MetadataRepo.create(android.graphics.Typeface,java.nio.ByteBuffer):133:133 -> run
-    177:177:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():386 -> run
-    177:177:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
-    178:186:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():384:384 -> run
-    178:186:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
-    187:188:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():388:388 -> run
+    169:172:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():391:391 -> run
+    169:172:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
+    173:178:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():392:392 -> run
+    173:178:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
+    179:180:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():394:395 -> run
+    179:180:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
+    181:183:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():395:395 -> run
+    181:183:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
+    184:186:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():394:394 -> run
+    184:186:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
+    187:188:androidx.emoji2.text.MetadataRepo androidx.emoji2.text.MetadataRepo.create(android.graphics.Typeface,java.nio.ByteBuffer):132:132 -> run
+    187:188:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():386 -> run
     187:188:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
     189:191:void androidx.core.os.TraceCompat.endSection():122:122 -> run
-    189:191:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():388 -> run
+    189:191:androidx.emoji2.text.MetadataRepo androidx.emoji2.text.MetadataRepo.create(android.graphics.Typeface,java.nio.ByteBuffer):132 -> run
+    189:191:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():386 -> run
     189:191:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
-    192:192:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():389:389 -> run
+    192:192:androidx.emoji2.text.MetadataRepo androidx.emoji2.text.MetadataRepo.create(android.graphics.Typeface,java.nio.ByteBuffer):133:133 -> run
+    192:192:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():386 -> run
     192:192:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
-    193:215:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():373:373 -> run
-    193:215:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
-    216:218:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():397:397 -> run
-    216:218:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
-    219:222:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():398:398 -> run
-    219:222:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
-    223:228:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():399:399 -> run
-    223:228:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
-    229:230:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():401:402 -> run
-    229:230:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
-    231:233:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():402:402 -> run
+    193:201:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():384:384 -> run
+    193:201:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
+    202:203:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():388:388 -> run
+    202:203:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
+    204:206:void androidx.core.os.TraceCompat.endSection():122:122 -> run
+    204:206:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():388 -> run
+    204:206:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
+    207:207:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():389:389 -> run
+    207:207:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
+    208:230:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():373:373 -> run
+    208:230:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
+    231:233:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():397:397 -> run
     231:233:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
-    234:235:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():401:401 -> run
-    234:235:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
-    236:237:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():354:354 -> run
-    236:237:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
-    238:245:void ActivityCompat$$ExternalSyntheticLambda0.run():0:0 -> run
-    246:249:void androidx.activity.ComponentActivity$ReportFullyDrawnExecutorApi16Impl.lambda$execute$0():1241:1241 -> run
-    246:249:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
-    250:253:void androidx.activity.ComponentActivity$ReportFullyDrawnExecutorApi16Impl.lambda$execute$0():1242:1242 -> run
-    250:253:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
-    254:256:void androidx.activity.ComponentActivity$ReportFullyDrawnExecutorApi16Impl.lambda$execute$0():1243:1243 -> run
-    254:256:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
-    257:258:void ActivityCompat$$ExternalSyntheticLambda0.run():0:0 -> run
-    259:262:void androidx.activity.ComponentActivity.invalidateMenu():567:567 -> run
-    259:262:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
-    263:265:void ActivityCompat$$ExternalSyntheticLambda0.run():0:0 -> run
-    266:271:void androidx.core.app.ActivityCompat.lambda$recreate$0(android.app.Activity):672:672 -> run
-    266:271:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
-    272:281:boolean androidx.core.app.ActivityRecreator.recreate(android.app.Activity):109:109 -> run
-    272:281:void androidx.core.app.ActivityCompat.lambda$recreate$0(android.app.Activity):672 -> run
-    272:281:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
-    282:298:boolean androidx.core.app.ActivityRecreator.recreate(android.app.Activity):110:110 -> run
-    282:298:void androidx.core.app.ActivityCompat.lambda$recreate$0(android.app.Activity):672 -> run
-    282:298:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
-    299:308:boolean androidx.core.app.ActivityRecreator.recreate(android.app.Activity):120:120 -> run
-    299:308:void androidx.core.app.ActivityCompat.lambda$recreate$0(android.app.Activity):672 -> run
-    299:308:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
-    309:317:boolean androidx.core.app.ActivityRecreator.recreate(android.app.Activity):124:124 -> run
-    309:317:void androidx.core.app.ActivityCompat.lambda$recreate$0(android.app.Activity):672 -> run
-    309:317:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
-    318:326:boolean androidx.core.app.ActivityRecreator.recreate(android.app.Activity):128:128 -> run
-    318:326:void androidx.core.app.ActivityCompat.lambda$recreate$0(android.app.Activity):672 -> run
-    318:326:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
-    327:330:boolean androidx.core.app.ActivityRecreator.recreate(android.app.Activity):133:133 -> run
-    327:330:void androidx.core.app.ActivityCompat.lambda$recreate$0(android.app.Activity):672 -> run
-    327:330:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
-    331:335:boolean androidx.core.app.ActivityRecreator.recreate(android.app.Activity):134:134 -> run
-    331:335:void androidx.core.app.ActivityCompat.lambda$recreate$0(android.app.Activity):672 -> run
-    331:335:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
-    336:338:boolean androidx.core.app.ActivityRecreator.recreate(android.app.Activity):135:135 -> run
-    336:338:void androidx.core.app.ActivityCompat.lambda$recreate$0(android.app.Activity):672 -> run
-    336:338:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
-    339:354:boolean androidx.core.app.ActivityRecreator.recreate(android.app.Activity):143:143 -> run
-    339:354:void androidx.core.app.ActivityCompat.lambda$recreate$0(android.app.Activity):672 -> run
-    339:354:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
-    355:375:boolean androidx.core.app.ActivityRecreator.recreate(android.app.Activity):153:153 -> run
-    355:375:void androidx.core.app.ActivityCompat.lambda$recreate$0(android.app.Activity):672 -> run
-    355:375:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
-    376:387:boolean androidx.core.app.ActivityRecreator.recreate(android.app.Activity):152:152 -> run
-    376:387:void androidx.core.app.ActivityCompat.lambda$recreate$0(android.app.Activity):672 -> run
-    376:387:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
-    388:390:boolean androidx.core.app.ActivityRecreator.recreate(android.app.Activity):155:155 -> run
-    388:390:void androidx.core.app.ActivityCompat.lambda$recreate$0(android.app.Activity):672 -> run
-    388:390:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
-    391:407:boolean androidx.core.app.ActivityRecreator.recreate(android.app.Activity):159:159 -> run
-    391:407:void androidx.core.app.ActivityCompat.lambda$recreate$0(android.app.Activity):672 -> run
-    391:407:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
-    408:408:boolean androidx.core.app.ActivityRecreator.recreate(android.app.Activity):169:169 -> run
-    408:408:void androidx.core.app.ActivityCompat.lambda$recreate$0(android.app.Activity):672 -> run
-    408:408:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
-    409:412:void androidx.core.app.ActivityCompat.lambda$recreate$0(android.app.Activity):674:674 -> run
-    409:412:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
+    234:237:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():398:398 -> run
+    234:237:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
+    238:243:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():399:399 -> run
+    238:243:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
+    244:245:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():401:402 -> run
+    244:245:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
+    246:248:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():402:402 -> run
+    246:248:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
+    249:250:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():401:401 -> run
+    249:250:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
+    251:252:void androidx.emoji2.text.FontRequestEmojiCompatConfig$FontRequestMetadataLoader.createMetadata():354:354 -> run
+    251:252:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
+    253:260:void ActivityCompat$$ExternalSyntheticLambda0.run():0:0 -> run
+    261:264:void androidx.activity.ComponentActivity$ReportFullyDrawnExecutorApi16Impl.lambda$execute$0():1241:1241 -> run
+    261:264:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
+    265:268:void androidx.activity.ComponentActivity$ReportFullyDrawnExecutorApi16Impl.lambda$execute$0():1242:1242 -> run
+    265:268:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
+    269:271:void androidx.activity.ComponentActivity$ReportFullyDrawnExecutorApi16Impl.lambda$execute$0():1243:1243 -> run
+    269:271:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
+    272:273:void ActivityCompat$$ExternalSyntheticLambda0.run():0:0 -> run
+    274:277:void androidx.activity.ComponentActivity.invalidateMenu():567:567 -> run
+    274:277:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
+    278:280:void ActivityCompat$$ExternalSyntheticLambda0.run():0:0 -> run
+    281:286:void androidx.core.app.ActivityCompat.lambda$recreate$0(android.app.Activity):672:672 -> run
+    281:286:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
+    287:296:boolean androidx.core.app.ActivityRecreator.recreate(android.app.Activity):109:109 -> run
+    287:296:void androidx.core.app.ActivityCompat.lambda$recreate$0(android.app.Activity):672 -> run
+    287:296:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
+    297:313:boolean androidx.core.app.ActivityRecreator.recreate(android.app.Activity):110:110 -> run
+    297:313:void androidx.core.app.ActivityCompat.lambda$recreate$0(android.app.Activity):672 -> run
+    297:313:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
+    314:323:boolean androidx.core.app.ActivityRecreator.recreate(android.app.Activity):120:120 -> run
+    314:323:void androidx.core.app.ActivityCompat.lambda$recreate$0(android.app.Activity):672 -> run
+    314:323:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
+    324:332:boolean androidx.core.app.ActivityRecreator.recreate(android.app.Activity):124:124 -> run
+    324:332:void androidx.core.app.ActivityCompat.lambda$recreate$0(android.app.Activity):672 -> run
+    324:332:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
+    333:341:boolean androidx.core.app.ActivityRecreator.recreate(android.app.Activity):128:128 -> run
+    333:341:void androidx.core.app.ActivityCompat.lambda$recreate$0(android.app.Activity):672 -> run
+    333:341:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
+    342:345:boolean androidx.core.app.ActivityRecreator.recreate(android.app.Activity):133:133 -> run
+    342:345:void androidx.core.app.ActivityCompat.lambda$recreate$0(android.app.Activity):672 -> run
+    342:345:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
+    346:350:boolean androidx.core.app.ActivityRecreator.recreate(android.app.Activity):134:134 -> run
+    346:350:void androidx.core.app.ActivityCompat.lambda$recreate$0(android.app.Activity):672 -> run
+    346:350:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
+    351:353:boolean androidx.core.app.ActivityRecreator.recreate(android.app.Activity):135:135 -> run
+    351:353:void androidx.core.app.ActivityCompat.lambda$recreate$0(android.app.Activity):672 -> run
+    351:353:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
+    354:369:boolean androidx.core.app.ActivityRecreator.recreate(android.app.Activity):143:143 -> run
+    354:369:void androidx.core.app.ActivityCompat.lambda$recreate$0(android.app.Activity):672 -> run
+    354:369:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
+    370:390:boolean androidx.core.app.ActivityRecreator.recreate(android.app.Activity):153:153 -> run
+    370:390:void androidx.core.app.ActivityCompat.lambda$recreate$0(android.app.Activity):672 -> run
+    370:390:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
+    391:402:boolean androidx.core.app.ActivityRecreator.recreate(android.app.Activity):152:152 -> run
+    391:402:void androidx.core.app.ActivityCompat.lambda$recreate$0(android.app.Activity):672 -> run
+    391:402:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
+    403:405:boolean androidx.core.app.ActivityRecreator.recreate(android.app.Activity):155:155 -> run
+    403:405:void androidx.core.app.ActivityCompat.lambda$recreate$0(android.app.Activity):672 -> run
+    403:405:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
+    406:422:boolean androidx.core.app.ActivityRecreator.recreate(android.app.Activity):159:159 -> run
+    406:422:void androidx.core.app.ActivityCompat.lambda$recreate$0(android.app.Activity):672 -> run
+    406:422:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
+    423:423:boolean androidx.core.app.ActivityRecreator.recreate(android.app.Activity):169:169 -> run
+    423:423:void androidx.core.app.ActivityCompat.lambda$recreate$0(android.app.Activity):672 -> run
+    423:423:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
+    424:428:void androidx.core.app.ActivityCompat.lambda$recreate$0(android.app.Activity):674:674 -> run
+    424:428:void ActivityCompat$$ExternalSyntheticLambda0.run():0 -> run
 androidx.core.app.ActivityCompat$Api16Impl -> b1:
 # {"id":"sourceFile","fileName":"ActivityCompat.java"}
     1:4:void finishAffinity(android.app.Activity):822:822 -> a
@@ -31453,83 +31460,80 @@ androidx.core.widget.AutoScrollHelper$ScrollAnimationRunnable -> p5:
       # {"id":"com.android.tools.r8.residualsignature","signature":"Ljava/lang/Object;"}
     1:8:void AutoScrollHelper$ScrollAnimationRunnable.<init>(java.lang.Object,byte):0:0 -> <init>
       # {"id":"com.android.tools.r8.synthesized"}
-    12:13:void androidx.appcompat.widget.Toolbar$2.run():253:253 -> run
-    14:17:boolean androidx.appcompat.widget.Toolbar.showOverflowMenu():611:611 -> run
-    14:17:void androidx.appcompat.widget.Toolbar$2.run():253 -> run
-    18:21:boolean androidx.appcompat.widget.ActionMenuView.showOverflowMenu():691:691 -> run
-    18:21:boolean androidx.appcompat.widget.Toolbar.showOverflowMenu():611 -> run
+    11:12:void androidx.appcompat.widget.Toolbar$2.run():253:253 -> run
+    13:16:boolean androidx.appcompat.widget.Toolbar.showOverflowMenu():611:611 -> run
+    13:16:void androidx.appcompat.widget.Toolbar$2.run():253 -> run
+    17:20:boolean androidx.appcompat.widget.ActionMenuView.showOverflowMenu():691:691 -> run
+    17:20:boolean androidx.appcompat.widget.Toolbar.showOverflowMenu():611 -> run
       # {"id":"com.android.tools.r8.rewriteFrame","conditions":["throws(Ljava/lang/NullPointerException;)"],"actions":["removeInnerFrames(1)"]}
-    18:21:void androidx.appcompat.widget.Toolbar$2.run():253 -> run
-    22:25:boolean androidx.appcompat.widget.ActionMenuView.showOverflowMenu():691:691 -> run
-    22:25:boolean androidx.appcompat.widget.Toolbar.showOverflowMenu():611 -> run
-    22:25:void androidx.appcompat.widget.Toolbar$2.run():253 -> run
-    26:32:void fun.android.readest.FunWebView$1.run():23:23 -> run
-    33:35:void fun.android.readest.FunWebView$1.run():26:26 -> run
-    36:40:void fun.android.readest.FunWebView$1.run():27:27 -> run
-    41:46:void androidx.fragment.app.FragmentManager$5.run():524:524 -> run
-    47:51:void androidx.appcompat.widget.DropDownListView$ResolveHoverRunnable.run():727:727 -> run
-    52:55:void androidx.appcompat.widget.DropDownListView$ResolveHoverRunnable.run():728:728 -> run
-    56:62:void androidx.activity.ComponentActivity$5.run():698:698 -> run
-    63:75:void androidx.activity.ComponentActivity$5.run():705:705 -> run
-    76:77:void androidx.activity.ComponentActivity$5.run():709:709 -> run
-    78:90:void androidx.activity.ComponentActivity$5.run():700:700 -> run
-    91:91:void androidx.activity.ComponentActivity$5.run():702:702 -> run
-    92:93:void com.google.android.material.bottomsheet.BottomSheetBehavior$StateSettlingTracker$1.run():2127:2127 -> run
-    94:97:void com.google.android.material.bottomsheet.BottomSheetBehavior$StateSettlingTracker$1.run():2128:2128 -> run
-    98:105:void com.google.android.material.bottomsheet.BottomSheetBehavior$StateSettlingTracker$1.run():2130:2130 -> run
-    106:108:void com.google.android.material.bottomsheet.BottomSheetBehavior.setStateInternal(int):1401:1401 -> run
-    106:108:void com.google.android.material.bottomsheet.BottomSheetBehavior$StateSettlingTracker$1.run():2131 -> run
-    109:120:void run():700:700 -> run
-    121:124:void run():704:704 -> run
-    125:126:void run():705:705 -> run
-    127:134:void androidx.core.widget.AutoScrollHelper$ClampedScroller.start():776:776 -> run
-    127:134:void run():706 -> run
-    135:136:void androidx.core.widget.AutoScrollHelper$ClampedScroller.start():777:777 -> run
-    135:136:void run():706 -> run
-    137:140:void androidx.core.widget.AutoScrollHelper$ClampedScroller.start():778:778 -> run
-    137:140:void run():706 -> run
-    141:142:void androidx.core.widget.AutoScrollHelper$ClampedScroller.start():779:779 -> run
-    141:142:void run():706 -> run
-    143:150:boolean androidx.core.widget.AutoScrollHelper$ClampedScroller.isFinished():795:795 -> run
-    143:150:void run():710 -> run
+    17:20:void androidx.appcompat.widget.Toolbar$2.run():253 -> run
+    21:24:boolean androidx.appcompat.widget.ActionMenuView.showOverflowMenu():691:691 -> run
+    21:24:boolean androidx.appcompat.widget.Toolbar.showOverflowMenu():611 -> run
+    21:24:void androidx.appcompat.widget.Toolbar$2.run():253 -> run
+    25:31:void androidx.fragment.app.FragmentManager$5.run():524:524 -> run
+    32:36:void androidx.appcompat.widget.DropDownListView$ResolveHoverRunnable.run():727:727 -> run
+    37:40:void androidx.appcompat.widget.DropDownListView$ResolveHoverRunnable.run():728:728 -> run
+    41:47:void androidx.activity.ComponentActivity$5.run():698:698 -> run
+    48:60:void androidx.activity.ComponentActivity$5.run():705:705 -> run
+    61:62:void androidx.activity.ComponentActivity$5.run():709:709 -> run
+    63:75:void androidx.activity.ComponentActivity$5.run():700:700 -> run
+    76:76:void androidx.activity.ComponentActivity$5.run():702:702 -> run
+    77:78:void com.google.android.material.bottomsheet.BottomSheetBehavior$StateSettlingTracker$1.run():2127:2127 -> run
+    79:82:void com.google.android.material.bottomsheet.BottomSheetBehavior$StateSettlingTracker$1.run():2128:2128 -> run
+    83:90:void com.google.android.material.bottomsheet.BottomSheetBehavior$StateSettlingTracker$1.run():2130:2130 -> run
+    91:93:void com.google.android.material.bottomsheet.BottomSheetBehavior.setStateInternal(int):1401:1401 -> run
+    91:93:void com.google.android.material.bottomsheet.BottomSheetBehavior$StateSettlingTracker$1.run():2131 -> run
+    94:105:void run():700:700 -> run
+    106:109:void run():704:704 -> run
+    110:111:void run():705:705 -> run
+    112:119:void androidx.core.widget.AutoScrollHelper$ClampedScroller.start():776:776 -> run
+    112:119:void run():706 -> run
+    120:121:void androidx.core.widget.AutoScrollHelper$ClampedScroller.start():777:777 -> run
+    120:121:void run():706 -> run
+    122:125:void androidx.core.widget.AutoScrollHelper$ClampedScroller.start():778:778 -> run
+    122:125:void run():706 -> run
+    126:127:void androidx.core.widget.AutoScrollHelper$ClampedScroller.start():779:779 -> run
+    126:127:void run():706 -> run
+    128:135:boolean androidx.core.widget.AutoScrollHelper$ClampedScroller.isFinished():795:795 -> run
+    128:135:void run():710 -> run
       # {"id":"com.android.tools.r8.rewriteFrame","conditions":["throws(Ljava/lang/NullPointerException;)"],"actions":["removeInnerFrames(1)"]}
-    151:165:boolean androidx.core.widget.AutoScrollHelper$ClampedScroller.isFinished():796:796 -> run
-    151:165:void run():710 -> run
-    166:171:void run():710:710 -> run
-    172:174:void run():711:711 -> run
-    175:178:void run():715:715 -> run
-    179:180:void run():716:716 -> run
-    181:190:void androidx.core.widget.AutoScrollHelper.cancelTargetTouch():687:687 -> run
-    181:190:void run():717 -> run
-    191:194:void androidx.core.widget.AutoScrollHelper.cancelTargetTouch():688:688 -> run
-    191:194:void run():717 -> run
-    195:197:void androidx.core.widget.AutoScrollHelper.cancelTargetTouch():690:690 -> run
-    195:197:void run():717 -> run
-    198:200:void androidx.core.widget.AutoScrollHelper.cancelTargetTouch():691:691 -> run
-    198:200:void run():717 -> run
-    201:206:void androidx.core.widget.AutoScrollHelper$ClampedScroller.computeScrollDelta():831:831 -> run
-    201:206:void run():720 -> run
-    207:210:void androidx.core.widget.AutoScrollHelper$ClampedScroller.computeScrollDelta():835:835 -> run
-    207:210:void run():720 -> run
-    211:222:void androidx.core.widget.AutoScrollHelper$ClampedScroller.computeScrollDelta():836:836 -> run
-    211:222:void run():720 -> run
-    223:226:void androidx.core.widget.AutoScrollHelper$ClampedScroller.computeScrollDelta():838:838 -> run
-    223:226:void run():720 -> run
-    227:230:void androidx.core.widget.AutoScrollHelper$ClampedScroller.computeScrollDelta():840:840 -> run
-    227:230:void run():720 -> run
-    231:234:void androidx.core.widget.AutoScrollHelper$ClampedScroller.computeScrollDelta():842:842 -> run
-    231:234:void run():720 -> run
-    235:236:void androidx.core.widget.ListViewAutoScrollHelper.scrollTargetBy(int,int):40:40 -> run
-    235:236:void run():724 -> run
+    136:150:boolean androidx.core.widget.AutoScrollHelper$ClampedScroller.isFinished():796:796 -> run
+    136:150:void run():710 -> run
+    151:156:void run():710:710 -> run
+    157:159:void run():711:711 -> run
+    160:163:void run():715:715 -> run
+    164:165:void run():716:716 -> run
+    166:175:void androidx.core.widget.AutoScrollHelper.cancelTargetTouch():687:687 -> run
+    166:175:void run():717 -> run
+    176:179:void androidx.core.widget.AutoScrollHelper.cancelTargetTouch():688:688 -> run
+    176:179:void run():717 -> run
+    180:182:void androidx.core.widget.AutoScrollHelper.cancelTargetTouch():690:690 -> run
+    180:182:void run():717 -> run
+    183:185:void androidx.core.widget.AutoScrollHelper.cancelTargetTouch():691:691 -> run
+    183:185:void run():717 -> run
+    186:191:void androidx.core.widget.AutoScrollHelper$ClampedScroller.computeScrollDelta():831:831 -> run
+    186:191:void run():720 -> run
+    192:195:void androidx.core.widget.AutoScrollHelper$ClampedScroller.computeScrollDelta():835:835 -> run
+    192:195:void run():720 -> run
+    196:207:void androidx.core.widget.AutoScrollHelper$ClampedScroller.computeScrollDelta():836:836 -> run
+    196:207:void run():720 -> run
+    208:211:void androidx.core.widget.AutoScrollHelper$ClampedScroller.computeScrollDelta():838:838 -> run
+    208:211:void run():720 -> run
+    212:215:void androidx.core.widget.AutoScrollHelper$ClampedScroller.computeScrollDelta():840:840 -> run
+    212:215:void run():720 -> run
+    216:219:void androidx.core.widget.AutoScrollHelper$ClampedScroller.computeScrollDelta():842:842 -> run
+    216:219:void run():720 -> run
+    220:221:void androidx.core.widget.ListViewAutoScrollHelper.scrollTargetBy(int,int):40:40 -> run
+    220:221:void run():724 -> run
       # {"id":"com.android.tools.r8.rewriteFrame","conditions":["throws(Ljava/lang/NullPointerException;)"],"actions":["removeInnerFrames(1)"]}
-    237:239:void androidx.core.widget.ListViewCompat.scrollListBy(android.widget.ListView,int):41:41 -> run
-    237:239:void androidx.core.widget.ListViewAutoScrollHelper.scrollTargetBy(int,int):40 -> run
-    237:239:void run():724 -> run
-    240:241:void run():727:727 -> run
-    242:245:void androidx.core.view.ViewCompat.postOnAnimation(android.view.View,java.lang.Runnable):1063:1063 -> run
-    242:245:void run():727 -> run
-    246:254:void androidx.core.widget.AutoScrollHelper$ClampedScroller.computeScrollDelta():832:832 -> run
-    246:254:void run():720 -> run
+    222:224:void androidx.core.widget.ListViewCompat.scrollListBy(android.widget.ListView,int):41:41 -> run
+    222:224:void androidx.core.widget.ListViewAutoScrollHelper.scrollTargetBy(int,int):40 -> run
+    222:224:void run():724 -> run
+    225:226:void run():727:727 -> run
+    227:230:void androidx.core.view.ViewCompat.postOnAnimation(android.view.View,java.lang.Runnable):1063:1063 -> run
+    227:230:void run():727 -> run
+    231:238:void androidx.core.widget.AutoScrollHelper$ClampedScroller.computeScrollDelta():832:832 -> run
+    231:238:void run():720 -> run
 androidx.core.widget.CheckedTextViewCompat -> R8$$REMOVED$$CLASS$$59:
 # {"id":"sourceFile","fileName":"CheckedTextViewCompat.java"}
 androidx.core.widget.CheckedTextViewCompat$Api16Impl -> R8$$REMOVED$$CLASS$$57:
@@ -48548,15 +48552,15 @@ fun.android.readest.App -> fun.android.readest.App:
     20:27:void androidx.core.app.NotificationManagerCompat.cancel(int):176 -> a
     20:27:void onDestroy():58 -> a
     28:31:void onDestroy():59:59 -> a
-    32:35:void fun.android.readest.FunWebView.onDestroy():162:162 -> a
+    32:35:void fun.android.readest.FunWebView.onDestroy():160:160 -> a
     32:35:void onDestroy():60 -> a
-    36:43:void fun.android.readest.FunWebView.onDestroy():163:163 -> a
+    36:43:void fun.android.readest.FunWebView.onDestroy():161:161 -> a
     36:43:void onDestroy():60 -> a
-    44:48:void fun.android.readest.FunWebView.onDestroy():165:165 -> a
+    44:48:void fun.android.readest.FunWebView.onDestroy():163:163 -> a
     44:48:void onDestroy():60 -> a
-    49:50:void fun.android.readest.FunWebView.onDestroy():168:168 -> a
+    49:50:void fun.android.readest.FunWebView.onDestroy():166:166 -> a
     49:50:void onDestroy():60 -> a
-    51:52:void fun.android.readest.FunWebView.onDestroy():169:169 -> a
+    51:52:void fun.android.readest.FunWebView.onDestroy():167:167 -> a
     51:52:void onDestroy():60 -> a
     53:54:void onDestroy():61:61 -> a
     55:61:void onDestroy():64:64 -> a
@@ -48589,119 +48593,119 @@ fun.android.readest.FunBroadcast$1 -> cb:
     22:25:void fun.android.readest.FunBroadcast$2.onReceive(android.content.Context,android.content.Intent):29:29 -> onReceive
     26:37:void onReceive(android.content.Context,android.content.Intent):13:13 -> onReceive
     38:41:void onReceive(android.content.Context,android.content.Intent):14:14 -> onReceive
-    42:45:void fun.android.readest.FunWebView.onDestroy():162:162 -> onReceive
+    42:45:void fun.android.readest.FunWebView.onDestroy():160:160 -> onReceive
     42:45:void onReceive(android.content.Context,android.content.Intent):15 -> onReceive
-    46:53:void fun.android.readest.FunWebView.onDestroy():163:163 -> onReceive
+    46:53:void fun.android.readest.FunWebView.onDestroy():161:161 -> onReceive
     46:53:void onReceive(android.content.Context,android.content.Intent):15 -> onReceive
-    54:59:void fun.android.readest.FunWebView.onDestroy():165:165 -> onReceive
+    54:59:void fun.android.readest.FunWebView.onDestroy():163:163 -> onReceive
     54:59:void onReceive(android.content.Context,android.content.Intent):15 -> onReceive
-    60:61:void fun.android.readest.FunWebView.onDestroy():168:168 -> onReceive
+    60:61:void fun.android.readest.FunWebView.onDestroy():166:166 -> onReceive
     60:61:void onReceive(android.content.Context,android.content.Intent):15 -> onReceive
-    62:63:void fun.android.readest.FunWebView.onDestroy():169:169 -> onReceive
+    62:63:void fun.android.readest.FunWebView.onDestroy():167:167 -> onReceive
     62:63:void onReceive(android.content.Context,android.content.Intent):15 -> onReceive
     64:65:void onReceive(android.content.Context,android.content.Intent):16:16 -> onReceive
     66:72:void onReceive(android.content.Context,android.content.Intent):18:18 -> onReceive
     73:88:void onReceive(android.content.Context,android.content.Intent):19:19 -> onReceive
 fun.android.readest.FunWebView -> gb:
 # {"id":"sourceFile","fileName":"FunWebView.java"}
-    boolean isinit -> a
+    boolean isLoaded -> a
     android.webkit.WebView webView -> b
     android.view.View customView -> c
     android.webkit.WebChromeClient$CustomViewCallback customViewCallback -> d
     android.os.Handler handler -> e
     java.lang.Runnable handlerRunnable -> f
-      # {"id":"com.android.tools.r8.residualsignature","signature":"Lp5;"}
-    1:4:void <init>():30:30 -> <init>
-    5:6:void <init>():15:15 -> <init>
-    7:17:void <init>():19:19 -> <init>
-    18:25:void <init>():20:20 -> <init>
-    26:34:void <init>():32:32 -> <init>
-    35:39:void CreateWebSettings():114:114 -> <init>
-    35:39:void <init>():33 -> <init>
-    40:42:void CreateWebSettings():115:115 -> <init>
-    40:42:void <init>():33 -> <init>
-    43:45:void CreateWebSettings():118:118 -> <init>
-    43:45:void <init>():33 -> <init>
-    46:48:void CreateWebSettings():119:119 -> <init>
-    46:48:void <init>():33 -> <init>
-    49:51:void CreateWebSettings():122:122 -> <init>
-    49:51:void <init>():33 -> <init>
-    52:54:void CreateWebSettings():123:123 -> <init>
-    52:54:void <init>():33 -> <init>
-    55:58:void CreateWebSettings():124:124 -> <init>
-    55:58:void <init>():33 -> <init>
-    59:61:void CreateWebSettings():127:127 -> <init>
-    59:61:void <init>():33 -> <init>
-    62:64:void CreateWebSettings():130:130 -> <init>
-    62:64:void <init>():33 -> <init>
-    65:67:void CreateWebSettings():131:131 -> <init>
-    65:67:void <init>():33 -> <init>
-    68:70:void CreateWebSettings():132:132 -> <init>
-    68:70:void <init>():33 -> <init>
-    71:73:void CreateWebSettings():133:133 -> <init>
-    71:73:void <init>():33 -> <init>
-    74:78:void CreateWebSettings():134:134 -> <init>
-    74:78:void <init>():33 -> <init>
-    79:81:void CreateWebSettings():136:136 -> <init>
-    79:81:void <init>():33 -> <init>
-    82:84:void CreateWebSettings():139:139 -> <init>
-    82:84:void <init>():33 -> <init>
-    85:87:void CreateWebSettings():140:140 -> <init>
-    85:87:void <init>():33 -> <init>
-    88:90:void CreateWebSettings():143:143 -> <init>
-    88:90:void <init>():33 -> <init>
-    91:93:void CreateWebSettings():144:144 -> <init>
-    91:93:void <init>():33 -> <init>
-    94:96:void CreateWebSettings():145:145 -> <init>
-    94:96:void <init>():33 -> <init>
-    97:99:void CreateWebSettings():148:148 -> <init>
-    97:99:void <init>():33 -> <init>
-    100:104:void CreateWebSettings():149:149 -> <init>
-    100:104:void <init>():33 -> <init>
-    105:107:void CreateWebSettings():152:152 -> <init>
-    105:107:void <init>():33 -> <init>
-    108:110:void CreateWebSettings():155:155 -> <init>
-    108:110:void <init>():33 -> <init>
-    111:113:void CreateWebSettings():156:156 -> <init>
-    111:113:void <init>():33 -> <init>
-    114:118:void CreateWebSettings():158:158 -> <init>
-    114:118:void <init>():33 -> <init>
-    119:129:void <init>():34:34 -> <init>
-    130:139:void <init>():35:35 -> <init>
-    140:149:void <init>():53:53 -> <init>
-    150:160:void <init>():92:92 -> <init>
-fun.android.readest.FunWebView$2 -> eb:
+      # {"id":"com.android.tools.r8.residualsignature","signature":"La1;"}
+    1:4:void <init>():28:28 -> <init>
+    5:6:void <init>():16:16 -> <init>
+    7:17:void <init>():20:20 -> <init>
+    18:25:void <init>():21:21 -> <init>
+    26:34:void <init>():30:30 -> <init>
+    35:39:void CreateWebSettings():112:112 -> <init>
+    35:39:void <init>():31 -> <init>
+    40:42:void CreateWebSettings():113:113 -> <init>
+    40:42:void <init>():31 -> <init>
+    43:45:void CreateWebSettings():116:116 -> <init>
+    43:45:void <init>():31 -> <init>
+    46:48:void CreateWebSettings():117:117 -> <init>
+    46:48:void <init>():31 -> <init>
+    49:51:void CreateWebSettings():120:120 -> <init>
+    49:51:void <init>():31 -> <init>
+    52:54:void CreateWebSettings():121:121 -> <init>
+    52:54:void <init>():31 -> <init>
+    55:58:void CreateWebSettings():122:122 -> <init>
+    55:58:void <init>():31 -> <init>
+    59:61:void CreateWebSettings():125:125 -> <init>
+    59:61:void <init>():31 -> <init>
+    62:64:void CreateWebSettings():128:128 -> <init>
+    62:64:void <init>():31 -> <init>
+    65:67:void CreateWebSettings():129:129 -> <init>
+    65:67:void <init>():31 -> <init>
+    68:70:void CreateWebSettings():130:130 -> <init>
+    68:70:void <init>():31 -> <init>
+    71:73:void CreateWebSettings():131:131 -> <init>
+    71:73:void <init>():31 -> <init>
+    74:78:void CreateWebSettings():132:132 -> <init>
+    74:78:void <init>():31 -> <init>
+    79:81:void CreateWebSettings():134:134 -> <init>
+    79:81:void <init>():31 -> <init>
+    82:84:void CreateWebSettings():137:137 -> <init>
+    82:84:void <init>():31 -> <init>
+    85:87:void CreateWebSettings():138:138 -> <init>
+    85:87:void <init>():31 -> <init>
+    88:90:void CreateWebSettings():141:141 -> <init>
+    88:90:void <init>():31 -> <init>
+    91:93:void CreateWebSettings():142:142 -> <init>
+    91:93:void <init>():31 -> <init>
+    94:96:void CreateWebSettings():143:143 -> <init>
+    94:96:void <init>():31 -> <init>
+    97:99:void CreateWebSettings():146:146 -> <init>
+    97:99:void <init>():31 -> <init>
+    100:104:void CreateWebSettings():147:147 -> <init>
+    100:104:void <init>():31 -> <init>
+    105:107:void CreateWebSettings():150:150 -> <init>
+    105:107:void <init>():31 -> <init>
+    108:110:void CreateWebSettings():153:153 -> <init>
+    108:110:void <init>():31 -> <init>
+    111:113:void CreateWebSettings():154:154 -> <init>
+    111:113:void <init>():31 -> <init>
+    114:118:void CreateWebSettings():156:156 -> <init>
+    114:118:void <init>():31 -> <init>
+    119:129:void <init>():32:32 -> <init>
+    130:139:void <init>():33:33 -> <init>
+    140:149:void <init>():51:51 -> <init>
+    150:160:void <init>():90:90 -> <init>
+fun.android.readest.FunWebView$1 -> eb:
 # {"id":"sourceFile","fileName":"FunWebView.java"}
     fun.android.readest.FunWebView this$0 -> a
       # {"id":"com.android.tools.r8.residualsignature","signature":"Lgb;"}
-    1:6:void <init>(fun.android.readest.FunWebView):35:35 -> <init>
+    1:6:void <init>(fun.android.readest.FunWebView):33:33 -> <init>
       # {"id":"com.android.tools.r8.residualsignature","signature":"(Lgb;)V"}
-    1:3:void onPageFinished(android.webkit.WebView,java.lang.String):48:48 -> onPageFinished
-    4:7:void onPageFinished(android.webkit.WebView,java.lang.String):49:49 -> onPageFinished
-    1:3:void onPageStarted(android.webkit.WebView,java.lang.String,android.graphics.Bitmap):38:38 -> onPageStarted
-    4:10:void onPageStarted(android.webkit.WebView,java.lang.String,android.graphics.Bitmap):39:39 -> onPageStarted
-    11:16:void onPageStarted(android.webkit.WebView,java.lang.String,android.graphics.Bitmap):42:42 -> onPageStarted
-    17:36:void onPageStarted(android.webkit.WebView,java.lang.String,android.graphics.Bitmap):43:43 -> onPageStarted
-fun.android.readest.FunWebView$3 -> fb:
+    1:3:void onPageFinished(android.webkit.WebView,java.lang.String):46:46 -> onPageFinished
+    4:7:void onPageFinished(android.webkit.WebView,java.lang.String):47:47 -> onPageFinished
+    1:3:void onPageStarted(android.webkit.WebView,java.lang.String,android.graphics.Bitmap):36:36 -> onPageStarted
+    4:10:void onPageStarted(android.webkit.WebView,java.lang.String,android.graphics.Bitmap):37:37 -> onPageStarted
+    11:16:void onPageStarted(android.webkit.WebView,java.lang.String,android.graphics.Bitmap):40:40 -> onPageStarted
+    17:36:void onPageStarted(android.webkit.WebView,java.lang.String,android.graphics.Bitmap):41:41 -> onPageStarted
+fun.android.readest.FunWebView$2 -> fb:
 # {"id":"sourceFile","fileName":"FunWebView.java"}
     fun.android.readest.FunWebView this$0 -> a
       # {"id":"com.android.tools.r8.residualsignature","signature":"Lgb;"}
-    1:6:void <init>(fun.android.readest.FunWebView):53:53 -> <init>
+    1:6:void <init>(fun.android.readest.FunWebView):51:51 -> <init>
       # {"id":"com.android.tools.r8.residualsignature","signature":"(Lgb;)V"}
-    1:3:void onHideCustomView():63:63 -> onHideCustomView
-    4:11:void onHideCustomView():64:64 -> onHideCustomView
-    12:14:void onHideCustomView():65:65 -> onHideCustomView
-    1:3:void onProgressChanged(android.webkit.WebView,int):69:69 -> onProgressChanged
-    4:6:void onProgressChanged(android.webkit.WebView,int):71:71 -> onProgressChanged
-    7:17:void onProgressChanged(android.webkit.WebView,int):72:72 -> onProgressChanged
-    18:26:void onProgressChanged(android.webkit.WebView,int):75:75 -> onProgressChanged
-    27:31:void onProgressChanged(android.webkit.WebView,int):79:79 -> onProgressChanged
-    32:36:void onProgressChanged(android.webkit.WebView,int):81:81 -> onProgressChanged
-    37:41:void onProgressChanged(android.webkit.WebView,int):83:83 -> onProgressChanged
-    42:44:void onProgressChanged(android.webkit.WebView,int):86:86 -> onProgressChanged
-    45:69:void onProgressChanged(android.webkit.WebView,int):87:87 -> onProgressChanged
-    1:4:void onShowCustomView(android.view.View,android.webkit.WebChromeClient$CustomViewCallback):57:57 -> onShowCustomView
-    5:7:void onShowCustomView(android.view.View,android.webkit.WebChromeClient$CustomViewCallback):58:58 -> onShowCustomView
+    1:3:void onHideCustomView():61:61 -> onHideCustomView
+    4:11:void onHideCustomView():62:62 -> onHideCustomView
+    12:14:void onHideCustomView():63:63 -> onHideCustomView
+    1:3:void onProgressChanged(android.webkit.WebView,int):67:67 -> onProgressChanged
+    4:6:void onProgressChanged(android.webkit.WebView,int):69:69 -> onProgressChanged
+    7:17:void onProgressChanged(android.webkit.WebView,int):70:70 -> onProgressChanged
+    18:26:void onProgressChanged(android.webkit.WebView,int):73:73 -> onProgressChanged
+    27:31:void onProgressChanged(android.webkit.WebView,int):77:77 -> onProgressChanged
+    32:36:void onProgressChanged(android.webkit.WebView,int):79:79 -> onProgressChanged
+    37:41:void onProgressChanged(android.webkit.WebView,int):81:81 -> onProgressChanged
+    42:44:void onProgressChanged(android.webkit.WebView,int):84:84 -> onProgressChanged
+    45:69:void onProgressChanged(android.webkit.WebView,int):85:85 -> onProgressChanged
+    1:4:void onShowCustomView(android.view.View,android.webkit.WebChromeClient$CustomViewCallback):55:55 -> onShowCustomView
+    5:7:void onShowCustomView(android.view.View,android.webkit.WebChromeClient$CustomViewCallback):56:56 -> onShowCustomView
 fun.android.readest.MainActivity -> fun.android.readest.MainActivity:
 # {"id":"sourceFile","fileName":"MainActivity.java"}
     1:4:void <init>():18:18 -> <init>
@@ -48766,8 +48770,8 @@ fun.android.readest.MainActivity -> fun.android.readest.MainActivity:
     242:257:void androidx.core.app.ActivityCompat.requestPermissions(android.app.Activity,java.lang.String[],int):528:528 -> onCreate
     242:257:void onCreate(android.os.Bundle):60 -> onCreate
     258:261:void onCreate(android.os.Bundle):63:63 -> onCreate
-    1:3:void onDestroy():108:108 -> onDestroy
-    4:7:void onDestroy():109:109 -> onDestroy
+    1:3:void onDestroy():109:109 -> onDestroy
+    4:7:void onDestroy():110:110 -> onDestroy
     1:3:void onPause():79:79 -> onPause
     4:12:void onPause():82:82 -> onPause
     13:19:void onPause():83:83 -> onPause
@@ -48781,9 +48785,9 @@ fun.android.readest.MainActivity -> fun.android.readest.MainActivity:
     13:21:void onResume():94:94 -> onResume
     22:28:void onResume():95:95 -> onResume
     29:32:void onResume():97:97 -> onResume
-    33:42:void onResume():99:99 -> onResume
-    43:50:void onResume():100:100 -> onResume
-    51:58:void onResume():103:103 -> onResume
+    33:42:void onResume():100:100 -> onResume
+    43:50:void onResume():101:101 -> onResume
+    51:58:void onResume():104:104 -> onResume
 kotlin.LazyKt__LazyJVMKt -> R8$$REMOVED$$CLASS$$111:
 # {"id":"sourceFile","fileName":"LazyJVM.kt"}
 kotlin.Pair -> jh:
