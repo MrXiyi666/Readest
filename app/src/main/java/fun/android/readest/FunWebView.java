@@ -11,22 +11,21 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+import androidx.annotation.NonNull;
+
 public class FunWebView {
-    private boolean isinit = false;
+    private boolean isLoaded = false;
     public WebView webView;
     public View customView;
     public WebChromeClient.CustomViewCallback customViewCallback;
     private final Handler handler = new Handler(Looper.getMainLooper());
-    private Runnable handlerRunnable = new Runnable() {
-        @Override
-        public void run() {
-            if(App.textView == null){
-                return;
-            }
-            App.textView.setVisibility(View.GONE);
-            isinit = true;
+    private final Runnable handlerRunnable = () -> {
+        if(App.textView == null){
+            return;
         }
-    };;
+        App.textView.setVisibility(View.GONE);
+        isLoaded = true;
+    };
     public FunWebView(){
         // 1. 创建WebView
         webView = new WebView(App.context);
@@ -36,7 +35,7 @@ public class FunWebView {
             @Override
             public void onPageStarted(WebView view, String url, Bitmap favicon) {
                 super.onPageStarted(view, url, favicon);
-                if(isinit){
+                if(isLoaded){
                     return;
                 }
                 App.textView.setVisibility(View.VISIBLE);
@@ -69,7 +68,7 @@ public class FunWebView {
                 super.onProgressChanged(view, newProgress);
                 //Log.w("webview", "加载资源中" + newProgress + "%");
                 view.requestFocus();
-                if(isinit){
+                if(isLoaded){
                     return;
                 }
                 if(App.textView == null){
@@ -91,13 +90,13 @@ public class FunWebView {
 
         webView.addOnAttachStateChangeListener(new View.OnAttachStateChangeListener() {
             @Override
-            public void onViewAttachedToWindow(View v) {
+            public void onViewAttachedToWindow(@NonNull View v) {
                 webView.loadUrl("https://web.readest.com/");
-                isinit = false;
+                isLoaded = false;
             }
 
             @Override
-            public void onViewDetachedFromWindow(View v) {
+            public void onViewDetachedFromWindow(@NonNull View v) {
                 webView.stopLoading();
                 webView.clearCache(true);
                 // 清空历史栈（可选）
