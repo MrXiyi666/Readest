@@ -12,6 +12,7 @@
         android:layout_height="wrap_content">
         <!-- 刷新按钮 -->
         <Button
+            android:padding="10dp"
             android:layout_weight="1"
             android:elevation="0dp"
             android:translationZ="0dp"
@@ -23,6 +24,7 @@
             android:background="@drawable/btn_round"
             android:text="刷新"/>
         <Button
+            android:padding="10dp"
             android:layout_weight="1"
             android:elevation="0dp"
             android:translationZ="0dp"

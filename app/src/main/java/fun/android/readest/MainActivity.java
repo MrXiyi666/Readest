@@ -22,24 +22,28 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         App.context= this;
+        // ========== 全屏核心代码（写在setContentView之前！） ==========
+        Window window = getWindow();
+        // 隐藏状态栏
+        window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        // 隐藏底部导航栏（可选，想要彻底全屏加上）
+        int uiFlags = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
+        window.getDecorView().setSystemUiVisibility(uiFlags);
         // 开启
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-        // 隐藏状态栏、导航栏
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        Window window = getWindow();
-        window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
-                | View.SYSTEM_UI_FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
         getOnBackPressedDispatcher().addCallback(this, App.callback);
         NotificationManagerCompat.from(this).cancel(App.NOTIFY_ID);
         //注册广播
         registerReceiver(FunBroadcast.refreshReceiver, new IntentFilter(App.ACTION_REFRESH_WEB), Context.RECEIVER_NOT_EXPORTED);
         registerReceiver(FunBroadcast.closeReceiver, new IntentFilter(App.ACTION_CLOSE_APP), Context.RECEIVER_NOT_EXPORTED);
-        App.funWebView = new FunWebView();
 
+        App.funWebView = new FunWebView();
         App.main = findViewById(R.id.main);
         App.textView = findViewById(R.id.textView);
+
         App.main.post(new Runnable() {
             @Override
             public void run() {

@@ -2,12 +2,10 @@ package fun.android.readest;
 
 import android.graphics.Bitmap;
 import android.graphics.Color;
-import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.JsResult;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -33,7 +31,7 @@ public class FunWebView {
         // 1. 创建WebView
         webView = new WebView(App.context);
         CreateWebSettings();
-        webView.setBackgroundColor(Color.GRAY);
+        webView.setBackgroundColor(Color.parseColor("#bfbfbf"));
         webView.setWebViewClient(new WebViewClient() {
             @Override
             public void onPageStarted(WebView view, String url, Bitmap favicon) {

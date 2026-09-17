@@ -3,8 +3,8 @@
 # min_api: 26
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.2"}
-# pg_map_id: ab90b966344870ad10486f37952701ba9e2daa7556d664ac6269c115dead6b91
-# pg_map_hash: SHA-256 ab90b966344870ad10486f37952701ba9e2daa7556d664ac6269c115dead6b91
+# pg_map_id: 1d668535e113b1a6b703742bbd086c8eeffbbed0e646524e93636b63d9f4f233
+# pg_map_hash: SHA-256 1d668535e113b1a6b703742bbd086c8eeffbbed0e646524e93636b63d9f4f233
 android.app.AppComponentFactory -> android.app.AppComponentFactory:
 # {"id":"com.android.tools.r8.synthesized"}
     void <clinit>() -> <clinit>
@@ -10221,17 +10221,17 @@ androidx.appcompat.view.menu.CascadingMenuPopup$2 -> y5:
       # {"id":"com.android.tools.r8.synthesized"}
     1:1:void onViewAttachedToWindow(android.view.View):123:123 -> a
     1:1:void androidx.appcompat.view.menu.StandardMenuPopup$2.onViewAttachedToWindow(android.view.View):83:83 -> b
-    7:18:void fun.android.readest.FunWebView$4.onViewAttachedToWindow(android.view.View):97:97 -> onViewAttachedToWindow
-    19:22:void fun.android.readest.FunWebView$4.onViewAttachedToWindow(android.view.View):98:98 -> onViewAttachedToWindow
+    7:18:void fun.android.readest.FunWebView$4.onViewAttachedToWindow(android.view.View):95:95 -> onViewAttachedToWindow
+    19:22:void fun.android.readest.FunWebView$4.onViewAttachedToWindow(android.view.View):96:96 -> onViewAttachedToWindow
     8:13:void androidx.appcompat.view.menu.StandardMenuPopup$2.onViewDetachedFromWindow(android.view.View):87:87 -> onViewDetachedFromWindow
     14:25:void androidx.appcompat.view.menu.StandardMenuPopup$2.onViewDetachedFromWindow(android.view.View):88:88 -> onViewDetachedFromWindow
     26:32:void androidx.appcompat.view.menu.StandardMenuPopup$2.onViewDetachedFromWindow(android.view.View):89:89 -> onViewDetachedFromWindow
     33:36:void androidx.appcompat.view.menu.StandardMenuPopup$2.onViewDetachedFromWindow(android.view.View):91:91 -> onViewDetachedFromWindow
-    37:43:void fun.android.readest.FunWebView$4.onViewDetachedFromWindow(android.view.View):103:103 -> onViewDetachedFromWindow
-    44:49:void fun.android.readest.FunWebView$4.onViewDetachedFromWindow(android.view.View):104:104 -> onViewDetachedFromWindow
-    50:54:void fun.android.readest.FunWebView$4.onViewDetachedFromWindow(android.view.View):106:106 -> onViewDetachedFromWindow
-    55:60:void fun.android.readest.FunWebView$4.onViewDetachedFromWindow(android.view.View):107:107 -> onViewDetachedFromWindow
-    61:63:void fun.android.readest.FunWebView$4.onViewDetachedFromWindow(android.view.View):108:108 -> onViewDetachedFromWindow
+    37:43:void fun.android.readest.FunWebView$4.onViewDetachedFromWindow(android.view.View):101:101 -> onViewDetachedFromWindow
+    44:49:void fun.android.readest.FunWebView$4.onViewDetachedFromWindow(android.view.View):102:102 -> onViewDetachedFromWindow
+    50:54:void fun.android.readest.FunWebView$4.onViewDetachedFromWindow(android.view.View):104:104 -> onViewDetachedFromWindow
+    55:60:void fun.android.readest.FunWebView$4.onViewDetachedFromWindow(android.view.View):105:105 -> onViewDetachedFromWindow
+    61:63:void fun.android.readest.FunWebView$4.onViewDetachedFromWindow(android.view.View):106:106 -> onViewDetachedFromWindow
     64:69:void onViewDetachedFromWindow(android.view.View):127:127 -> onViewDetachedFromWindow
     70:75:void onViewDetachedFromWindow(android.view.View):128:128 -> onViewDetachedFromWindow
     76:81:void onViewDetachedFromWindow(android.view.View):129:129 -> onViewDetachedFromWindow
@@ -28715,7 +28715,7 @@ androidx.core.provider.CallbackWithHandler$2 -> u5:
     8:8:void CallbackWithHandler$2.<init>(byte):0:0 -> <init>
       # {"id":"com.android.tools.r8.synthesized"}
     1:1:void run():72:72 -> a
-    7:18:void fun.android.readest.MainActivity$1.run():46:46 -> run
+    7:18:void fun.android.readest.MainActivity$1.run():50:50 -> run
     19:22:void androidx.emoji2.text.EmojiCompatInitializer$LoadEmojiCompatRunnable.run():137:137 -> run
     23:25:void androidx.core.os.TraceCompat.beginSection(java.lang.String):109:109 -> run
     23:25:void androidx.emoji2.text.EmojiCompatInitializer$LoadEmojiCompatRunnable.run():137 -> run
@@ -31463,9 +31463,9 @@ androidx.core.widget.AutoScrollHelper$ScrollAnimationRunnable -> p5:
     22:25:boolean androidx.appcompat.widget.ActionMenuView.showOverflowMenu():691:691 -> run
     22:25:boolean androidx.appcompat.widget.Toolbar.showOverflowMenu():611 -> run
     22:25:void androidx.appcompat.widget.Toolbar$2.run():253 -> run
-    26:32:void fun.android.readest.FunWebView$1.run():25:25 -> run
-    33:35:void fun.android.readest.FunWebView$1.run():28:28 -> run
-    36:40:void fun.android.readest.FunWebView$1.run():29:29 -> run
+    26:32:void fun.android.readest.FunWebView$1.run():23:23 -> run
+    33:35:void fun.android.readest.FunWebView$1.run():26:26 -> run
+    36:40:void fun.android.readest.FunWebView$1.run():27:27 -> run
     41:46:void androidx.fragment.app.FragmentManager$5.run():524:524 -> run
     47:51:void androidx.appcompat.widget.DropDownListView$ResolveHoverRunnable.run():727:727 -> run
     52:55:void androidx.appcompat.widget.DropDownListView$ResolveHoverRunnable.run():728:728 -> run
@@ -48540,28 +48540,28 @@ fun.android.readest.App -> fun.android.readest.App:
     12:14:void <clinit>():30 -> <clinit>
     15:17:void <clinit>():30:30 -> <clinit>
     1:4:void <init>():15:15 -> <init>
-    1:12:void onDestroy():59:59 -> a
-    13:14:void onDestroy():60:60 -> a
+    1:12:void onDestroy():57:57 -> a
+    13:14:void onDestroy():58:58 -> a
     15:19:androidx.core.app.NotificationManagerCompat androidx.core.app.NotificationManagerCompat.from(android.content.Context):161:161 -> a
-    15:19:void onDestroy():60 -> a
+    15:19:void onDestroy():58 -> a
     20:27:void androidx.core.app.NotificationManagerCompat.cancel(java.lang.String,int):186:186 -> a
     20:27:void androidx.core.app.NotificationManagerCompat.cancel(int):176 -> a
-    20:27:void onDestroy():60 -> a
-    28:31:void onDestroy():61:61 -> a
-    32:35:void fun.android.readest.FunWebView.onDestroy():164:164 -> a
-    32:35:void onDestroy():62 -> a
-    36:43:void fun.android.readest.FunWebView.onDestroy():165:165 -> a
-    36:43:void onDestroy():62 -> a
-    44:48:void fun.android.readest.FunWebView.onDestroy():167:167 -> a
-    44:48:void onDestroy():62 -> a
-    49:50:void fun.android.readest.FunWebView.onDestroy():170:170 -> a
-    49:50:void onDestroy():62 -> a
-    51:52:void fun.android.readest.FunWebView.onDestroy():171:171 -> a
-    51:52:void onDestroy():62 -> a
-    53:54:void onDestroy():63:63 -> a
-    55:61:void onDestroy():66:66 -> a
-    62:70:void onDestroy():67:67 -> a
-    71:76:void onDestroy():69:69 -> a
+    20:27:void onDestroy():58 -> a
+    28:31:void onDestroy():59:59 -> a
+    32:35:void fun.android.readest.FunWebView.onDestroy():162:162 -> a
+    32:35:void onDestroy():60 -> a
+    36:43:void fun.android.readest.FunWebView.onDestroy():163:163 -> a
+    36:43:void onDestroy():60 -> a
+    44:48:void fun.android.readest.FunWebView.onDestroy():165:165 -> a
+    44:48:void onDestroy():60 -> a
+    49:50:void fun.android.readest.FunWebView.onDestroy():168:168 -> a
+    49:50:void onDestroy():60 -> a
+    51:52:void fun.android.readest.FunWebView.onDestroy():169:169 -> a
+    51:52:void onDestroy():60 -> a
+    53:54:void onDestroy():61:61 -> a
+    55:61:void onDestroy():64:64 -> a
+    62:70:void onDestroy():65:65 -> a
+    71:76:void onDestroy():67:67 -> a
 fun.android.readest.App$1 -> y1:
 # {"id":"sourceFile","fileName":"App.java"}
 fun.android.readest.FunBroadcast -> db:
@@ -48589,15 +48589,15 @@ fun.android.readest.FunBroadcast$1 -> cb:
     22:25:void fun.android.readest.FunBroadcast$2.onReceive(android.content.Context,android.content.Intent):29:29 -> onReceive
     26:37:void onReceive(android.content.Context,android.content.Intent):13:13 -> onReceive
     38:41:void onReceive(android.content.Context,android.content.Intent):14:14 -> onReceive
-    42:45:void fun.android.readest.FunWebView.onDestroy():164:164 -> onReceive
+    42:45:void fun.android.readest.FunWebView.onDestroy():162:162 -> onReceive
     42:45:void onReceive(android.content.Context,android.content.Intent):15 -> onReceive
-    46:53:void fun.android.readest.FunWebView.onDestroy():165:165 -> onReceive
+    46:53:void fun.android.readest.FunWebView.onDestroy():163:163 -> onReceive
     46:53:void onReceive(android.content.Context,android.content.Intent):15 -> onReceive
-    54:59:void fun.android.readest.FunWebView.onDestroy():167:167 -> onReceive
+    54:59:void fun.android.readest.FunWebView.onDestroy():165:165 -> onReceive
     54:59:void onReceive(android.content.Context,android.content.Intent):15 -> onReceive
-    60:61:void fun.android.readest.FunWebView.onDestroy():170:170 -> onReceive
+    60:61:void fun.android.readest.FunWebView.onDestroy():168:168 -> onReceive
     60:61:void onReceive(android.content.Context,android.content.Intent):15 -> onReceive
-    62:63:void fun.android.readest.FunWebView.onDestroy():171:171 -> onReceive
+    62:63:void fun.android.readest.FunWebView.onDestroy():169:169 -> onReceive
     62:63:void onReceive(android.content.Context,android.content.Intent):15 -> onReceive
     64:65:void onReceive(android.content.Context,android.content.Intent):16:16 -> onReceive
     66:72:void onReceive(android.content.Context,android.content.Intent):18:18 -> onReceive
@@ -48611,179 +48611,179 @@ fun.android.readest.FunWebView -> gb:
     android.os.Handler handler -> e
     java.lang.Runnable handlerRunnable -> f
       # {"id":"com.android.tools.r8.residualsignature","signature":"Lp5;"}
-    1:4:void <init>():32:32 -> <init>
-    5:6:void <init>():17:17 -> <init>
-    7:17:void <init>():21:21 -> <init>
-    18:25:void <init>():22:22 -> <init>
-    26:34:void <init>():34:34 -> <init>
-    35:39:void CreateWebSettings():116:116 -> <init>
-    35:39:void <init>():35 -> <init>
-    40:42:void CreateWebSettings():117:117 -> <init>
-    40:42:void <init>():35 -> <init>
-    43:45:void CreateWebSettings():120:120 -> <init>
-    43:45:void <init>():35 -> <init>
-    46:48:void CreateWebSettings():121:121 -> <init>
-    46:48:void <init>():35 -> <init>
-    49:51:void CreateWebSettings():124:124 -> <init>
-    49:51:void <init>():35 -> <init>
-    52:54:void CreateWebSettings():125:125 -> <init>
-    52:54:void <init>():35 -> <init>
-    55:58:void CreateWebSettings():126:126 -> <init>
-    55:58:void <init>():35 -> <init>
-    59:61:void CreateWebSettings():129:129 -> <init>
-    59:61:void <init>():35 -> <init>
-    62:64:void CreateWebSettings():132:132 -> <init>
-    62:64:void <init>():35 -> <init>
-    65:67:void CreateWebSettings():133:133 -> <init>
-    65:67:void <init>():35 -> <init>
-    68:70:void CreateWebSettings():134:134 -> <init>
-    68:70:void <init>():35 -> <init>
-    71:73:void CreateWebSettings():135:135 -> <init>
-    71:73:void <init>():35 -> <init>
-    74:78:void CreateWebSettings():136:136 -> <init>
-    74:78:void <init>():35 -> <init>
-    79:81:void CreateWebSettings():138:138 -> <init>
-    79:81:void <init>():35 -> <init>
-    82:84:void CreateWebSettings():141:141 -> <init>
-    82:84:void <init>():35 -> <init>
-    85:87:void CreateWebSettings():142:142 -> <init>
-    85:87:void <init>():35 -> <init>
-    88:90:void CreateWebSettings():145:145 -> <init>
-    88:90:void <init>():35 -> <init>
-    91:93:void CreateWebSettings():146:146 -> <init>
-    91:93:void <init>():35 -> <init>
-    94:96:void CreateWebSettings():147:147 -> <init>
-    94:96:void <init>():35 -> <init>
-    97:99:void CreateWebSettings():150:150 -> <init>
-    97:99:void <init>():35 -> <init>
-    100:104:void CreateWebSettings():151:151 -> <init>
-    100:104:void <init>():35 -> <init>
-    105:107:void CreateWebSettings():154:154 -> <init>
-    105:107:void <init>():35 -> <init>
-    108:110:void CreateWebSettings():157:157 -> <init>
-    108:110:void <init>():35 -> <init>
-    111:113:void CreateWebSettings():158:158 -> <init>
-    111:113:void <init>():35 -> <init>
-    114:118:void CreateWebSettings():160:160 -> <init>
-    114:118:void <init>():35 -> <init>
-    119:126:void <init>():36:36 -> <init>
-    127:136:void <init>():37:37 -> <init>
-    137:146:void <init>():55:55 -> <init>
-    147:157:void <init>():94:94 -> <init>
+    1:4:void <init>():30:30 -> <init>
+    5:6:void <init>():15:15 -> <init>
+    7:17:void <init>():19:19 -> <init>
+    18:25:void <init>():20:20 -> <init>
+    26:34:void <init>():32:32 -> <init>
+    35:39:void CreateWebSettings():114:114 -> <init>
+    35:39:void <init>():33 -> <init>
+    40:42:void CreateWebSettings():115:115 -> <init>
+    40:42:void <init>():33 -> <init>
+    43:45:void CreateWebSettings():118:118 -> <init>
+    43:45:void <init>():33 -> <init>
+    46:48:void CreateWebSettings():119:119 -> <init>
+    46:48:void <init>():33 -> <init>
+    49:51:void CreateWebSettings():122:122 -> <init>
+    49:51:void <init>():33 -> <init>
+    52:54:void CreateWebSettings():123:123 -> <init>
+    52:54:void <init>():33 -> <init>
+    55:58:void CreateWebSettings():124:124 -> <init>
+    55:58:void <init>():33 -> <init>
+    59:61:void CreateWebSettings():127:127 -> <init>
+    59:61:void <init>():33 -> <init>
+    62:64:void CreateWebSettings():130:130 -> <init>
+    62:64:void <init>():33 -> <init>
+    65:67:void CreateWebSettings():131:131 -> <init>
+    65:67:void <init>():33 -> <init>
+    68:70:void CreateWebSettings():132:132 -> <init>
+    68:70:void <init>():33 -> <init>
+    71:73:void CreateWebSettings():133:133 -> <init>
+    71:73:void <init>():33 -> <init>
+    74:78:void CreateWebSettings():134:134 -> <init>
+    74:78:void <init>():33 -> <init>
+    79:81:void CreateWebSettings():136:136 -> <init>
+    79:81:void <init>():33 -> <init>
+    82:84:void CreateWebSettings():139:139 -> <init>
+    82:84:void <init>():33 -> <init>
+    85:87:void CreateWebSettings():140:140 -> <init>
+    85:87:void <init>():33 -> <init>
+    88:90:void CreateWebSettings():143:143 -> <init>
+    88:90:void <init>():33 -> <init>
+    91:93:void CreateWebSettings():144:144 -> <init>
+    91:93:void <init>():33 -> <init>
+    94:96:void CreateWebSettings():145:145 -> <init>
+    94:96:void <init>():33 -> <init>
+    97:99:void CreateWebSettings():148:148 -> <init>
+    97:99:void <init>():33 -> <init>
+    100:104:void CreateWebSettings():149:149 -> <init>
+    100:104:void <init>():33 -> <init>
+    105:107:void CreateWebSettings():152:152 -> <init>
+    105:107:void <init>():33 -> <init>
+    108:110:void CreateWebSettings():155:155 -> <init>
+    108:110:void <init>():33 -> <init>
+    111:113:void CreateWebSettings():156:156 -> <init>
+    111:113:void <init>():33 -> <init>
+    114:118:void CreateWebSettings():158:158 -> <init>
+    114:118:void <init>():33 -> <init>
+    119:129:void <init>():34:34 -> <init>
+    130:139:void <init>():35:35 -> <init>
+    140:149:void <init>():53:53 -> <init>
+    150:160:void <init>():92:92 -> <init>
 fun.android.readest.FunWebView$2 -> eb:
 # {"id":"sourceFile","fileName":"FunWebView.java"}
     fun.android.readest.FunWebView this$0 -> a
       # {"id":"com.android.tools.r8.residualsignature","signature":"Lgb;"}
-    1:6:void <init>(fun.android.readest.FunWebView):37:37 -> <init>
+    1:6:void <init>(fun.android.readest.FunWebView):35:35 -> <init>
       # {"id":"com.android.tools.r8.residualsignature","signature":"(Lgb;)V"}
-    1:3:void onPageFinished(android.webkit.WebView,java.lang.String):50:50 -> onPageFinished
-    4:7:void onPageFinished(android.webkit.WebView,java.lang.String):51:51 -> onPageFinished
-    1:3:void onPageStarted(android.webkit.WebView,java.lang.String,android.graphics.Bitmap):40:40 -> onPageStarted
-    4:10:void onPageStarted(android.webkit.WebView,java.lang.String,android.graphics.Bitmap):41:41 -> onPageStarted
-    11:16:void onPageStarted(android.webkit.WebView,java.lang.String,android.graphics.Bitmap):44:44 -> onPageStarted
-    17:36:void onPageStarted(android.webkit.WebView,java.lang.String,android.graphics.Bitmap):45:45 -> onPageStarted
+    1:3:void onPageFinished(android.webkit.WebView,java.lang.String):48:48 -> onPageFinished
+    4:7:void onPageFinished(android.webkit.WebView,java.lang.String):49:49 -> onPageFinished
+    1:3:void onPageStarted(android.webkit.WebView,java.lang.String,android.graphics.Bitmap):38:38 -> onPageStarted
+    4:10:void onPageStarted(android.webkit.WebView,java.lang.String,android.graphics.Bitmap):39:39 -> onPageStarted
+    11:16:void onPageStarted(android.webkit.WebView,java.lang.String,android.graphics.Bitmap):42:42 -> onPageStarted
+    17:36:void onPageStarted(android.webkit.WebView,java.lang.String,android.graphics.Bitmap):43:43 -> onPageStarted
 fun.android.readest.FunWebView$3 -> fb:
 # {"id":"sourceFile","fileName":"FunWebView.java"}
     fun.android.readest.FunWebView this$0 -> a
       # {"id":"com.android.tools.r8.residualsignature","signature":"Lgb;"}
-    1:6:void <init>(fun.android.readest.FunWebView):55:55 -> <init>
+    1:6:void <init>(fun.android.readest.FunWebView):53:53 -> <init>
       # {"id":"com.android.tools.r8.residualsignature","signature":"(Lgb;)V"}
-    1:3:void onHideCustomView():65:65 -> onHideCustomView
-    4:11:void onHideCustomView():66:66 -> onHideCustomView
-    12:14:void onHideCustomView():67:67 -> onHideCustomView
-    1:3:void onProgressChanged(android.webkit.WebView,int):71:71 -> onProgressChanged
-    4:6:void onProgressChanged(android.webkit.WebView,int):73:73 -> onProgressChanged
-    7:17:void onProgressChanged(android.webkit.WebView,int):74:74 -> onProgressChanged
-    18:26:void onProgressChanged(android.webkit.WebView,int):77:77 -> onProgressChanged
-    27:31:void onProgressChanged(android.webkit.WebView,int):81:81 -> onProgressChanged
-    32:36:void onProgressChanged(android.webkit.WebView,int):83:83 -> onProgressChanged
-    37:41:void onProgressChanged(android.webkit.WebView,int):85:85 -> onProgressChanged
-    42:44:void onProgressChanged(android.webkit.WebView,int):88:88 -> onProgressChanged
-    45:69:void onProgressChanged(android.webkit.WebView,int):89:89 -> onProgressChanged
-    1:4:void onShowCustomView(android.view.View,android.webkit.WebChromeClient$CustomViewCallback):59:59 -> onShowCustomView
-    5:7:void onShowCustomView(android.view.View,android.webkit.WebChromeClient$CustomViewCallback):60:60 -> onShowCustomView
+    1:3:void onHideCustomView():63:63 -> onHideCustomView
+    4:11:void onHideCustomView():64:64 -> onHideCustomView
+    12:14:void onHideCustomView():65:65 -> onHideCustomView
+    1:3:void onProgressChanged(android.webkit.WebView,int):69:69 -> onProgressChanged
+    4:6:void onProgressChanged(android.webkit.WebView,int):71:71 -> onProgressChanged
+    7:17:void onProgressChanged(android.webkit.WebView,int):72:72 -> onProgressChanged
+    18:26:void onProgressChanged(android.webkit.WebView,int):75:75 -> onProgressChanged
+    27:31:void onProgressChanged(android.webkit.WebView,int):79:79 -> onProgressChanged
+    32:36:void onProgressChanged(android.webkit.WebView,int):81:81 -> onProgressChanged
+    37:41:void onProgressChanged(android.webkit.WebView,int):83:83 -> onProgressChanged
+    42:44:void onProgressChanged(android.webkit.WebView,int):86:86 -> onProgressChanged
+    45:69:void onProgressChanged(android.webkit.WebView,int):87:87 -> onProgressChanged
+    1:4:void onShowCustomView(android.view.View,android.webkit.WebChromeClient$CustomViewCallback):57:57 -> onShowCustomView
+    5:7:void onShowCustomView(android.view.View,android.webkit.WebChromeClient$CustomViewCallback):58:58 -> onShowCustomView
 fun.android.readest.MainActivity -> fun.android.readest.MainActivity:
 # {"id":"sourceFile","fileName":"MainActivity.java"}
     1:4:void <init>():18:18 -> <init>
     2:5:void androidx.core.app.ActivityCompat.requestPermissions(android.app.Activity,java.lang.String[],int):533:533 -> onCreate
-    2:5:void onCreate(android.os.Bundle):56 -> onCreate
+    2:5:void onCreate(android.os.Bundle):60 -> onCreate
     6:8:void onCreate(android.os.Bundle):23:23 -> onCreate
     9:10:void onCreate(android.os.Bundle):24:24 -> onCreate
-    11:19:void onCreate(android.os.Bundle):26:26 -> onCreate
-    20:28:void onCreate(android.os.Bundle):28:28 -> onCreate
-    29:32:void onCreate(android.os.Bundle):29:29 -> onCreate
-    33:44:void onCreate(android.os.Bundle):30:30 -> onCreate
-    45:47:void onCreate(android.os.Bundle):33:33 -> onCreate
-    48:56:void onCreate(android.os.Bundle):34:34 -> onCreate
-    57:62:androidx.core.app.NotificationManagerCompat androidx.core.app.NotificationManagerCompat.from(android.content.Context):161:161 -> onCreate
-    57:62:void onCreate(android.os.Bundle):35 -> onCreate
-    63:69:void androidx.core.app.NotificationManagerCompat.cancel(java.lang.String,int):186:186 -> onCreate
-    63:69:void androidx.core.app.NotificationManagerCompat.cancel(int):176 -> onCreate
-    63:69:void onCreate(android.os.Bundle):35 -> onCreate
-    70:82:void onCreate(android.os.Bundle):37:37 -> onCreate
-    83:94:void onCreate(android.os.Bundle):38:38 -> onCreate
-    95:104:void onCreate(android.os.Bundle):39:39 -> onCreate
-    105:115:void onCreate(android.os.Bundle):41:41 -> onCreate
-    116:123:void onCreate(android.os.Bundle):42:42 -> onCreate
-    124:128:void onCreate(android.os.Bundle):43:43 -> onCreate
-    129:131:void fun.android.readest.MainActivity$1.<init>(fun.android.readest.MainActivity):43:43 -> onCreate
-    129:131:void onCreate(android.os.Bundle):43 -> onCreate
-    132:134:void onCreate(android.os.Bundle):43:43 -> onCreate
-    135:143:void fun.android.readest.FunNoti.createNotificationChannel():19:19 -> onCreate
-    135:143:void onCreate(android.os.Bundle):52 -> onCreate
-    144:153:void fun.android.readest.FunNoti.createNotificationChannel():20:20 -> onCreate
-    144:153:void onCreate(android.os.Bundle):52 -> onCreate
-    154:156:void fun.android.readest.FunNoti.createNotificationChannel():21:21 -> onCreate
-    154:156:void onCreate(android.os.Bundle):52 -> onCreate
-    157:163:void onCreate(android.os.Bundle):54:54 -> onCreate
-    164:169:void onCreate(android.os.Bundle):56:56 -> onCreate
-    170:174:void androidx.core.app.ActivityCompat.requestPermissions(android.app.Activity,java.lang.String[],int):524:524 -> onCreate
-    170:174:void onCreate(android.os.Bundle):56 -> onCreate
-    175:182:void androidx.core.app.ActivityCompat.requestPermissions(android.app.Activity,java.lang.String[],int):526:526 -> onCreate
-    175:182:void onCreate(android.os.Bundle):56 -> onCreate
-    183:188:void androidx.core.app.ActivityCompat.requestPermissions(android.app.Activity,java.lang.String[],int):531:531 -> onCreate
-    183:188:void onCreate(android.os.Bundle):56 -> onCreate
-    189:196:void androidx.core.app.ActivityCompat.requestPermissions(android.app.Activity,java.lang.String[],int):532:532 -> onCreate
-    189:196:void onCreate(android.os.Bundle):56 -> onCreate
-    197:199:void androidx.core.app.ActivityCompat.requestPermissions(android.app.Activity,java.lang.String[],int):533:533 -> onCreate
-    197:199:void onCreate(android.os.Bundle):56 -> onCreate
-    200:207:void androidx.core.app.ActivityCompat.requestPermissions(android.app.Activity,java.lang.String[],int):538:538 -> onCreate
-    200:207:void onCreate(android.os.Bundle):56 -> onCreate
-    208:216:void androidx.core.app.ActivityCompat.requestPermissions(android.app.Activity,java.lang.String[],int):540:540 -> onCreate
-    208:216:void onCreate(android.os.Bundle):56 -> onCreate
-    217:222:void androidx.core.app.ActivityCompat.requestPermissions(android.app.Activity,java.lang.String[],int):546:546 -> onCreate
-    217:222:void onCreate(android.os.Bundle):56 -> onCreate
-    223:228:void androidx.core.app.ActivityCompat.requestPermissions(android.app.Activity,java.lang.String[],int):547:547 -> onCreate
-    223:228:void onCreate(android.os.Bundle):56 -> onCreate
-    229:232:void androidx.core.app.ActivityCompat.requestPermissions(android.app.Activity,java.lang.String[],int):557:557 -> onCreate
-    229:232:void onCreate(android.os.Bundle):56 -> onCreate
-    233:234:void androidx.core.app.ActivityCompat.requestPermissions(android.app.Activity,java.lang.String[],int):527:527 -> onCreate
-    233:234:void onCreate(android.os.Bundle):56 -> onCreate
-    235:238:void androidx.core.app.ActivityCompat.requestPermissions(android.app.Activity,java.lang.String[],int):528:528 -> onCreate
-    235:238:void onCreate(android.os.Bundle):56 -> onCreate
-    239:245:void androidx.core.app.ActivityCompat.requestPermissions(android.app.Activity,java.lang.String[],int):527:527 -> onCreate
-    239:245:void onCreate(android.os.Bundle):56 -> onCreate
-    246:261:void androidx.core.app.ActivityCompat.requestPermissions(android.app.Activity,java.lang.String[],int):528:528 -> onCreate
-    246:261:void onCreate(android.os.Bundle):56 -> onCreate
-    262:265:void onCreate(android.os.Bundle):59:59 -> onCreate
-    1:3:void onDestroy():104:104 -> onDestroy
-    4:7:void onDestroy():105:105 -> onDestroy
-    1:3:void onPause():75:75 -> onPause
-    4:12:void onPause():78:78 -> onPause
-    13:19:void onPause():79:79 -> onPause
-    20:23:void onPause():80:80 -> onPause
-    1:7:void onRequestPermissionsResult(int,java.lang.String[],int[]):64:64 -> onRequestPermissionsResult
-    8:15:void onRequestPermissionsResult(int,java.lang.String[],int[]):66:66 -> onRequestPermissionsResult
-    16:19:void onRequestPermissionsResult(int,java.lang.String[],int[]):68:68 -> onRequestPermissionsResult
-    1:3:void onResume():85:85 -> onResume
-    4:9:void onResume():86:86 -> onResume
-    10:12:void onResume():87:87 -> onResume
-    13:21:void onResume():90:90 -> onResume
-    22:28:void onResume():91:91 -> onResume
-    29:32:void onResume():93:93 -> onResume
-    33:42:void onResume():95:95 -> onResume
-    43:50:void onResume():96:96 -> onResume
-    51:58:void onResume():99:99 -> onResume
+    11:16:void onCreate(android.os.Bundle):26:26 -> onCreate
+    17:21:void onCreate(android.os.Bundle):28:28 -> onCreate
+    22:28:void onCreate(android.os.Bundle):33:33 -> onCreate
+    29:40:void onCreate(android.os.Bundle):35:35 -> onCreate
+    41:43:void onCreate(android.os.Bundle):36:36 -> onCreate
+    44:52:void onCreate(android.os.Bundle):37:37 -> onCreate
+    53:58:androidx.core.app.NotificationManagerCompat androidx.core.app.NotificationManagerCompat.from(android.content.Context):161:161 -> onCreate
+    53:58:void onCreate(android.os.Bundle):38 -> onCreate
+    59:65:void androidx.core.app.NotificationManagerCompat.cancel(java.lang.String,int):186:186 -> onCreate
+    59:65:void androidx.core.app.NotificationManagerCompat.cancel(int):176 -> onCreate
+    59:65:void onCreate(android.os.Bundle):38 -> onCreate
+    66:78:void onCreate(android.os.Bundle):40:40 -> onCreate
+    79:90:void onCreate(android.os.Bundle):41:41 -> onCreate
+    91:100:void onCreate(android.os.Bundle):43:43 -> onCreate
+    101:111:void onCreate(android.os.Bundle):44:44 -> onCreate
+    112:119:void onCreate(android.os.Bundle):45:45 -> onCreate
+    120:124:void onCreate(android.os.Bundle):47:47 -> onCreate
+    125:127:void fun.android.readest.MainActivity$1.<init>(fun.android.readest.MainActivity):47:47 -> onCreate
+    125:127:void onCreate(android.os.Bundle):47 -> onCreate
+    128:130:void onCreate(android.os.Bundle):47:47 -> onCreate
+    131:139:void fun.android.readest.FunNoti.createNotificationChannel():19:19 -> onCreate
+    131:139:void onCreate(android.os.Bundle):56 -> onCreate
+    140:149:void fun.android.readest.FunNoti.createNotificationChannel():20:20 -> onCreate
+    140:149:void onCreate(android.os.Bundle):56 -> onCreate
+    150:152:void fun.android.readest.FunNoti.createNotificationChannel():21:21 -> onCreate
+    150:152:void onCreate(android.os.Bundle):56 -> onCreate
+    153:159:void onCreate(android.os.Bundle):58:58 -> onCreate
+    160:165:void onCreate(android.os.Bundle):60:60 -> onCreate
+    166:170:void androidx.core.app.ActivityCompat.requestPermissions(android.app.Activity,java.lang.String[],int):524:524 -> onCreate
+    166:170:void onCreate(android.os.Bundle):60 -> onCreate
+    171:178:void androidx.core.app.ActivityCompat.requestPermissions(android.app.Activity,java.lang.String[],int):526:526 -> onCreate
+    171:178:void onCreate(android.os.Bundle):60 -> onCreate
+    179:184:void androidx.core.app.ActivityCompat.requestPermissions(android.app.Activity,java.lang.String[],int):531:531 -> onCreate
+    179:184:void onCreate(android.os.Bundle):60 -> onCreate
+    185:192:void androidx.core.app.ActivityCompat.requestPermissions(android.app.Activity,java.lang.String[],int):532:532 -> onCreate
+    185:192:void onCreate(android.os.Bundle):60 -> onCreate
+    193:195:void androidx.core.app.ActivityCompat.requestPermissions(android.app.Activity,java.lang.String[],int):533:533 -> onCreate
+    193:195:void onCreate(android.os.Bundle):60 -> onCreate
+    196:203:void androidx.core.app.ActivityCompat.requestPermissions(android.app.Activity,java.lang.String[],int):538:538 -> onCreate
+    196:203:void onCreate(android.os.Bundle):60 -> onCreate
+    204:212:void androidx.core.app.ActivityCompat.requestPermissions(android.app.Activity,java.lang.String[],int):540:540 -> onCreate
+    204:212:void onCreate(android.os.Bundle):60 -> onCreate
+    213:218:void androidx.core.app.ActivityCompat.requestPermissions(android.app.Activity,java.lang.String[],int):546:546 -> onCreate
+    213:218:void onCreate(android.os.Bundle):60 -> onCreate
+    219:224:void androidx.core.app.ActivityCompat.requestPermissions(android.app.Activity,java.lang.String[],int):547:547 -> onCreate
+    219:224:void onCreate(android.os.Bundle):60 -> onCreate
+    225:228:void androidx.core.app.ActivityCompat.requestPermissions(android.app.Activity,java.lang.String[],int):557:557 -> onCreate
+    225:228:void onCreate(android.os.Bundle):60 -> onCreate
+    229:230:void androidx.core.app.ActivityCompat.requestPermissions(android.app.Activity,java.lang.String[],int):527:527 -> onCreate
+    229:230:void onCreate(android.os.Bundle):60 -> onCreate
+    231:234:void androidx.core.app.ActivityCompat.requestPermissions(android.app.Activity,java.lang.String[],int):528:528 -> onCreate
+    231:234:void onCreate(android.os.Bundle):60 -> onCreate
+    235:241:void androidx.core.app.ActivityCompat.requestPermissions(android.app.Activity,java.lang.String[],int):527:527 -> onCreate
+    235:241:void onCreate(android.os.Bundle):60 -> onCreate
+    242:257:void androidx.core.app.ActivityCompat.requestPermissions(android.app.Activity,java.lang.String[],int):528:528 -> onCreate
+    242:257:void onCreate(android.os.Bundle):60 -> onCreate
+    258:261:void onCreate(android.os.Bundle):63:63 -> onCreate
+    1:3:void onDestroy():108:108 -> onDestroy
+    4:7:void onDestroy():109:109 -> onDestroy
+    1:3:void onPause():79:79 -> onPause
+    4:12:void onPause():82:82 -> onPause
+    13:19:void onPause():83:83 -> onPause
+    20:23:void onPause():84:84 -> onPause
+    1:7:void onRequestPermissionsResult(int,java.lang.String[],int[]):68:68 -> onRequestPermissionsResult
+    8:15:void onRequestPermissionsResult(int,java.lang.String[],int[]):70:70 -> onRequestPermissionsResult
+    16:19:void onRequestPermissionsResult(int,java.lang.String[],int[]):72:72 -> onRequestPermissionsResult
+    1:3:void onResume():89:89 -> onResume
+    4:9:void onResume():90:90 -> onResume
+    10:12:void onResume():91:91 -> onResume
+    13:21:void onResume():94:94 -> onResume
+    22:28:void onResume():95:95 -> onResume
+    29:32:void onResume():97:97 -> onResume
+    33:42:void onResume():99:99 -> onResume
+    43:50:void onResume():100:100 -> onResume
+    51:58:void onResume():103:103 -> onResume
 kotlin.LazyKt__LazyJVMKt -> R8$$REMOVED$$CLASS$$111:
 # {"id":"sourceFile","fileName":"LazyJVM.kt"}
 kotlin.Pair -> jh:

@@ -51,8 +51,6 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
         //WebView.setWebContentsDebuggingEnabled(true);
-        // 卸载残留通知
-
     }
 
     public static void onDestroy(){
