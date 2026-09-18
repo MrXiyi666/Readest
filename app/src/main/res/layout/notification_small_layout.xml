@@ -2,42 +2,36 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="10dp">
+    android:orientation="vertical">
     <LinearLayout
         android:layout_gravity="center"
         android:orientation="horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
         <!-- 刷新按钮 -->
         <Button
+            android:padding="10dp"
             android:layout_weight="1"
             android:elevation="0dp"
             android:translationZ="0dp"
             android:stateListAnimator="@null"
-            android:id="@+id/refresh_button"
-            android:layout_marginEnd="5dp"
+            android:id="@+id/open_button"
+            android:layout_marginEnd="4dp"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:background="@drawable/btn_round"
-            android:text="刷新"/>
+            android:text="打开"/>
         <Button
+            android:padding="10dp"
             android:layout_weight="1"
             android:elevation="0dp"
             android:translationZ="0dp"
             android:stateListAnimator="@null"
-            android:layout_marginStart="5dp"
+            android:layout_marginStart="4dp"
             android:id="@+id/close_button"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:background="@drawable/btn_round"
             android:text="关闭"/>
     </LinearLayout>
-    <TextView
-        android:layout_gravity="center"
-        android:layout_marginTop="4dp"
-        android:text="刷新当前网页 或者 关闭整个程序"
-        android:visibility="visible"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
 </LinearLayout>

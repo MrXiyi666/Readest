@@ -7,6 +7,16 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
 public class FunBroadcast {
+
+    public static final BroadcastReceiver openReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            if(App.ACTION_REFRESH_WEB.equals(intent.getAction())){
+
+            }
+        }
+    };
+
     public static final BroadcastReceiver refreshReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {

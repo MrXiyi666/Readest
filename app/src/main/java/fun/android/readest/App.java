@@ -2,10 +2,9 @@ package fun.android.readest;
 
 import android.app.Application;
 import android.content.Context;
-import android.content.IntentFilter;
+import android.content.Intent;
 import android.util.Log;
 import android.view.ViewGroup;
-import android.webkit.WebView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -66,5 +65,8 @@ public class App extends Application {
         } catch (Exception e) {
             Log.w("error", e);
         }
+        // 停止前台服务 → stopForeground(true)会移除通知
+        Intent stopServiceIntent = new Intent(context, MenuService.class);
+        context.stopService(stopServiceIntent);
     }
 }

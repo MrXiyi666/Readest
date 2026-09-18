@@ -2,10 +2,12 @@ package fun.android.readest;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -52,24 +54,31 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        // 创建通知渠道（只需要创建一次）
-        FunNoti.createNotificationChannel();
-        // Android13 请求通知权限
+
+        // Android13+ 通知权限请求
         if (ActivityCompat.checkSelfPermission(MainActivity.this,
                 Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
+            // 没有权限：弹窗申请，不要在这里启动服务，等待回调
             ActivityCompat.requestPermissions(MainActivity.this,
                     new String[]{Manifest.permission.POST_NOTIFICATIONS}, 100);
-        }else{
-            FunNoti.showNotification();
         }
+
+
     }
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if(requestCode == 100){ // 和上面的100对应
             if (grantResults.length >0 && grantResults[0]==PackageManager.PERMISSION_GRANTED){
-                // 用户同意通知权限，可以发通知
-                FunNoti.showNotification();
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                    if (ActivityCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) == PackageManager.PERMISSION_GRANTED) {
+                        Intent intent = new Intent(MainActivity.this, MenuService.class);
+                        startForegroundService(intent);
+                    }
+                } else {
+                    Intent intent = new Intent(MainActivity.this, MenuService.class);
+                    startForegroundService(intent);
+                }
             }
         }
     }
@@ -87,9 +96,16 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) == PackageManager.PERMISSION_GRANTED) {
-            FunNoti.showNotification();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) == PackageManager.PERMISSION_GRANTED) {
+                Intent intent = new Intent(MainActivity.this, MenuService.class);
+                startForegroundService(intent);
+            }
+        } else {
+            Intent intent = new Intent(MainActivity.this, MenuService.class);
+            startForegroundService(intent);
         }
+
         // 页面回到前台，开启常亮
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         if (App.funWebView.webView == null) return;
